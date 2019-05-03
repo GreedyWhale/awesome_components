@@ -1,1 +1,41 @@
-<view class="a">你好<text class="b">组件</text></view>
+<wxs module="wxs">
+  function getAvatarSize(width, height) {
+    return 'height: ' + (height || width) + 'rpx; width: ' + width +'rpx;'
+  }
+  function getDotClass(count) {
+    var class = '';
+    if(count) {
+      class = parseInt(count) >= 100 ? 'pill' : 'circle';
+    }
+    return 'avatar-message-number avatar-dot flex-align-center ' + class;
+  }
+  module.exports = { 
+    getAvatarSize: getAvatarSize,
+    getDotClass: getDotClass
+  }
+</wxs>
+
+<view class="avatar-wrapper">
+  <view
+    style="{{wxs.getAvatarSize(width, height)}}" bindtap="onClick" data-url="{{url}}"
+    class="single-avatar flex-align-center {{shape}}" wx:if="{{!urls.length}}">
+    <image src="{{url}}" wx:if="{{url}}" mode="aspectFit" class="avatar-img"/>
+    <view class="{{wxs.getDotClass(count)}}" wx:if="{{count}}">
+      {{count}}
+    </view>
+    <view class="avatar-dot flex-align-center" wx:elif="{{visibleDot}}">
+      <slot name="tag"></slot>
+    </view>
+    <view class="ellipsis">
+      <slot></slot>
+    </view>
+  </view>
+  <view wx:elif="{{urls.length}}" class="multiple-avatar">
+    <view
+      wx:for="{{urls}}" wx:key="{{urls + index}}"
+      style="{{wxs.getAvatarSize(width, height)}} z-index: {{urls.length - index}};"
+      class="avatar-img-wrapper" bindtap="onClick" data-url="{{item}}">
+      <image src="{{item}}" class="avatar-img"/>
+    </view>
+  </view>
+</view>

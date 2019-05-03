@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "avatar": "../../components/avatar/avatar"
+    "avatar": "/components/avatar/avatar"
   }
 }

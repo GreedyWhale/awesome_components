@@ -1,17 +1,45 @@
 Component({
+  options: {
+    multipleSlots: true // 在组件定义时的选项中启用多slot支持
+  },
   properties: {
-    myProperty: { // 属性名
+    url: { // 头像链接
       type: String,
       value: ''
     },
-    myProperty2: String // 简化的定义方式
+    urls: {
+      type: Array,
+      value: []
+    },
+    width: { // 宽度
+      type: String,
+      optionalTypes: [Number],
+      value: '100'
+    },
+    height: { // 高度
+      type: String,
+      optionalTypes: [Number],
+      value: ''
+    },
+    shape: {
+      type: String,
+      value: 'square' // 圆角 rounded，圆形 circle
+    },
+    count: {
+      type: String,
+      optionalTypes: [Number],
+      value: '' // 圆角 rounded，圆形 circle
+    },
+    visibleDot: {
+      type: Boolean,
+      value: false
+    }
   },
 
-  data: {}, // 私有数据，可用于模板渲染
+  data: {},
 
   lifetimes: {
-    // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
-    attached() { },
+    attached() {},
     moved() { },
     detached() { },
   },
@@ -23,7 +51,9 @@ Component({
   },
 
   methods: {
-
+    onClick(e) {
+      this.triggerEvent('onclick', e)
+    }
   }
 
 })

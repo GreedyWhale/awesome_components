@@ -1,3 +1,22 @@
-<avatar></avatar>
-444
-555
+<avatar url="http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg"></avatar>
+<avatar shape="rounded" url="http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg"></avatar>
+<avatar shape="circle" url="http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg"></avatar>
+<view class="line"></view>
+<avatar>Allen</avatar>
+<avatar shape="rounded" bind:onclick="a">Allen</avatar>
+<avatar shape="circle">Allen</avatar>
+
+<view class="line"></view>
+<avatar count="999" url="http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg"></avatar>
+<avatar shape="rounded" url="http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg" count="1"></avatar>
+<avatar shape="circle" url="http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg" count="10"></avatar>
+
+<view class="line"></view>
+<avatar url="http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg" visibleDot="{{true}}">
+  <view slot="tag">
+    <image src="http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg" style="width: 20px; height: 20px; border-radius: 50%"/>
+  </view>
+</avatar>
+<view class="line"></view>
+<avatar urls="{{urls}}" bind:onclick="a"></avatar>
+
