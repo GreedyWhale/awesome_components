@@ -10,7 +10,7 @@
     "dist": "npm run build",
     "clean-dev": "gulp clean --develop",
     "clean": "gulp clean",
-    "test": "jest ./test/* --bail",
+    "test": "jest ./test/* --bail && npm run coverage",
     "test-dev": "jest ./test/* --bail --watch",
     "coverage": "jest ./test/* --coverage --bail",
     "report-coverage": "codecov -f coverage/*.info",
