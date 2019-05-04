@@ -1,9 +1,9 @@
 Component({
   options: {
-    multipleSlots: true // 在组件定义时的选项中启用多slot支持
+    multipleSlots: true
   },
   properties: {
-    url: { // 头像链接
+    url: {
       type: String,
       value: ''
     },
@@ -11,28 +11,32 @@ Component({
       type: Array,
       value: []
     },
-    width: { // 宽度
+    width: {
       type: String,
       optionalTypes: [Number],
       value: '100'
     },
-    height: { // 高度
+    height: {
       type: String,
       optionalTypes: [Number],
       value: ''
     },
     shape: {
       type: String,
-      value: 'square' // 圆角 rounded，圆形 circle
+      value: 'square'
     },
     count: {
       type: String,
       optionalTypes: [Number],
-      value: '' // 圆角 rounded，圆形 circle
+      value: ''
     },
     visibleDot: {
       type: Boolean,
       value: false
+    },
+    bgColor: {
+      type: String,
+      value: ''
     }
   },
 

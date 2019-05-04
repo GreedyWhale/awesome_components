@@ -61,6 +61,12 @@ Page({
 ```
 <ac-avatar url="xxx.png" width="100" height="200"></ac-avatar>
 ```
+### 自定义颜色
+```
+<ac-avatar bg-color="#F17F42"></ac-avatar>
+<ac-avatar bg-color="#D7FFF1"></ac-avatar>
+<ac-avatar bg-color="#C5C6B6"></ac-avatar>
+```
 
 ### API
 | 属性 | 类型 | 说明 | 默认值 |
@@ -72,6 +78,7 @@ Page({
 | shape | String | 头像形状，可选值：square（直角矩形），rounded（圆角矩形），circle（圆形） | square
 | count | String \| Number | 消息数量 | 
 | visible-dot | Boolean | 自定义右上角标签时，需要传入true | false
+| bg-color | String | 自定义文字头像时的颜色，格式为十六进制 | 
 
 ### 事件
 | 事件名  | 说明 | 参数 |

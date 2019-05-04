@@ -20,3 +20,7 @@
 <view class="line"></view>
 <avatar urls="{{urls}}" bind:onclick="a"></avatar>
 
+<view class="line"></view>
+<avatar bg-color="#876590">Allen</avatar>
+<avatar shape="rounded" bind:onclick="a">Allen</avatar>
+<avatar shape="circle">Allen</avatar>

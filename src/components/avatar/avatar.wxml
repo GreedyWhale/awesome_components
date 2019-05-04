@@ -1,6 +1,10 @@
 <wxs module="wxs">
-  function getAvatarSize(width, height) {
-    return 'height: ' + (height || width) + 'rpx; width: ' + width +'rpx;'
+  function getAvatarSize(width, height, bgColor) {
+    var style = 'height: ' + (height || width) + 'rpx; width: ' + width +'rpx;'
+    if(bgColor) {
+      style += 'background-color: ' + bgColor;
+    }
+    return style;
   }
   function getDotClass(count) {
     var class = '';
@@ -17,7 +21,7 @@
 
 <view class="avatar-wrapper">
   <view
-    style="{{wxs.getAvatarSize(width, height)}}" bindtap="onClick" data-url="{{url}}"
+    style="{{wxs.getAvatarSize(width, height, bgColor)}}" bindtap="onClick" data-url="{{url}}"
     class="single-avatar flex-align-center {{shape}}" wx:if="{{!urls.length}}">
     <image src="{{url}}" wx:if="{{url}}" mode="aspectFit" class="avatar-img"/>
     <view class="{{wxs.getDotClass(count)}}" wx:if="{{count}}">
