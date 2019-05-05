@@ -1,0 +1,64 @@
+@import url('./icon.less');
+@keyframes up {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(100%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(100%, -150%);
+  }
+}
+@red: #f54141;
+.give-like-wrapper {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  padding: 20rpx;
+  .give-like {
+    position: relative;
+    z-index: 1;
+    .icon-like-active {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: @red;
+      transform-origin: bottom center;
+      transform: scale(0);
+      &.visible {
+        transform: scale(1);
+      }
+      &.play-animation {
+        animation: up 300ms linear;
+      }
+    }
+    &-text {
+      color: @red;
+      font-size: 24rpx;
+      position: absolute;
+      right: -10rpx;
+      top: 50%;
+      transform: translate(100%, -50%);
+      opacity: 0;
+      &.play-animation {
+        animation: fadeIn 800ms ease-in;
+      }
+    }
+  }
+}

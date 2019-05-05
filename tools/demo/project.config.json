@@ -12,9 +12,9 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.3",
-	"appid": "",
-	"projectname": "miniprogram-demo",
+	"libVersion": "2.6.6",
+	"appid": "wx3b7011e8143c5184",
+	"projectname": "effective-assistant",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

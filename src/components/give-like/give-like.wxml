@@ -1,0 +1,22 @@
+<wxs module="wxs">
+  function setIconClasses(isActive, startAnimation) {
+    var classes = 'ac-iconfont icon-like-active';
+    // 默认展示active状态
+    if(isActive) {
+      classes += ' visible'
+    }
+    if(startAnimation) {
+      classes += ' play-animation'
+    }
+    return classes
+  }
+  module.exports = { setIconClasses: setIconClasses }
+</wxs>
+
+<view class="give-like-wrapper">
+  <view class="give-like" bindtap="onClick">
+    <view class="ac-iconfont icon-like"></view>
+    <view class="{{wxs.setIconClasses(isActive, startAnimation)}}"></view>
+    <view class="give-like-text {{startAnimation ? 'play-animation': ''}}">{{tips}}</view>
+  </view>
+</view>

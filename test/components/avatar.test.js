@@ -42,7 +42,7 @@ describe('avatar', () => {
     expect(avatarElem1.dom.classList[2]).toEqual('rounded')
     expect(avatarElem2.dom.classList[2]).toEqual('circle')
   })
-  test('avatar 组件支持消息模式', async () => {
+  test('avatar 组件支持消息模式', () => {
     const root = simulate.load({
       template: '<ac-avatar count="10">Allen</ac-avatar>',
       usingComponents: {
@@ -52,7 +52,7 @@ describe('avatar', () => {
     const component = simulate.render(root)
     expect(component.dom.innerHTML).toContain('10')
   })
-  test('avatar 组件支持自定义左上角标签', async () => {
+  test('avatar 组件支持自定义左上角标签', () => {
     const root = simulate.load({
       template: '<ac-avatar visibleDot="{{true}}"><view slot="tag">tag</view></ac-avatar>',
       usingComponents: {
@@ -62,9 +62,20 @@ describe('avatar', () => {
     const component = simulate.render(root)
     expect(component.dom.innerHTML).toContain('<wx-view class="avatar-dot flex-align-center"></wx-view>')
   })
-  test('avatar 组件支持改变背景颜色', async () => {
+  test('avatar 组件支持改变背景颜色', () => {
     const component = simulate.render(avatar, {url: 'xxx.png', bgColor: '#ffffff'})
     const avatarElem = component.querySelector('.single-avatar')
     expect(avatarElem.dom.style._values['background-color']).toEqual('rgb(255, 255, 255)')
+  })
+  test('avatar 组件支持onclick事件', async () => {
+    const component = simulate.render(avatar, {url: 'xxx.png'})
+    let number = 1
+    component.instance.onClick = () => {
+      number += 1
+    }
+    const ele = component.querySelector('.single-avatar')
+    ele.dispatchEvent('tap')
+    await simulate.sleep(10)
+    expect(number).toEqual(2)
   })
 })
