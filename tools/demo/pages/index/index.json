@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "ac-give-like": "/components/give-like/give-like"
+    "ac-progress": "/components/progress/progress"
   }
 }

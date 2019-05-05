@@ -1,3 +1,6 @@
 .line {
   margin: 30rpx;
 }
+.progress-wrapper {
+  background: green;
+}

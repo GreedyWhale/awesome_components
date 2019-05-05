@@ -1,13 +1,12 @@
 Page({
   data: {
-    urls: [
-      'http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg',
-      'http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg',
-      'http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg',
-      'http://img0.imgtn.bdimg.com/it/u=955253199,2106515703&fm=26&gp=0.jpg'
-    ]
+    percent: 0
   },
-  a(e) {
-    console.log(e)
+  onShow() {
+    setTimeout(() => {
+      this.setData({
+        percent: 50
+      })
+    }, 1000)
   }
 })

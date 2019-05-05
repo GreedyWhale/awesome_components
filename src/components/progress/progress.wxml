@@ -1,0 +1,7 @@
+<view class="progress-wrapper" style="{{progressStyle}}">
+  <view class="progress" style="width: {{percent}}%; background: {{progressColor}};"></view>
+  <view class="progress-stripe progress-position-absolute" style="width: {{percent}}%"></view>
+  <view class="progress-text progress-position-absolute">
+    <slot></slot>
+  </view>
+</view>

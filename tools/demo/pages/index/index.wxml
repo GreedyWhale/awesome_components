@@ -1,1 +1,6 @@
-<ac-give-like tips="点赞" default-active="{{true}}" bind:onclick="a" font-size="100"></ac-give-like>
+<ac-progress
+  percent="{{percent}}"
+  custom-style="{{ {background: '#f17ab0'} }}"
+>
+  <view>90/100</view>
+</ac-progress>
