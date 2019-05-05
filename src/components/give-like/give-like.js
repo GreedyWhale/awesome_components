@@ -1,7 +1,4 @@
 Component({
-  options: {
-    multipleSlots: true
-  },
   properties: {
     defaultActive: {
       type: Boolean,
@@ -15,24 +12,22 @@ Component({
     tips: {
       type: String,
       value: '+1'
+    },
+    fontSize: {
+      type: String,
+      value: '',
+      observer(newValue) {
+        this.setData({
+          iconFontSize: `font-size: ${newValue}rpx`
+        })
+      }
     }
   },
 
   data: {
     isActive: false,
-    startAnimation: false
-  },
-
-  lifetimes: {
-    attached() {},
-    moved() { },
-    detached() { },
-  },
-
-  pageLifetimes: {
-    show() { },
-    hide() { },
-    resize() { },
+    startAnimation: false,
+    iconFontSize: ''
   },
 
   methods: {

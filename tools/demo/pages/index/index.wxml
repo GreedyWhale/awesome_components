@@ -1,1 +1,1 @@
-<ac-give-like tips="点赞" default-active="{{true}}"></ac-give-like>
+<ac-give-like tips="点赞" default-active="{{true}}" bind:onclick="a" font-size="100"></ac-give-like>

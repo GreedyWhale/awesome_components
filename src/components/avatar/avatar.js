@@ -42,18 +42,6 @@ Component({
 
   data: {},
 
-  lifetimes: {
-    attached() {},
-    moved() { },
-    detached() { },
-  },
-
-  pageLifetimes: {
-    show() { },
-    hide() { },
-    resize() { },
-  },
-
   methods: {
     onClick(e) {
       this.triggerEvent('onclick', e)

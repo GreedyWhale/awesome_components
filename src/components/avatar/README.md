@@ -83,7 +83,7 @@ Page({
 ### 事件
 | 事件名  | 说明 | 参数 |
 | :---: | :----: | :----: |
-| onClick | 点击头像时触发 | event: Event
+| onclick | 点击头像时触发 | event: Event
 
 
 ### slot
