@@ -1,6 +1,7 @@
 <ac-progress
   percent="{{percent}}"
   custom-style="{{ {background: '#f17ab0'} }}"
+  stripe="{{true}}"
 >
   <view>90/100</view>
 </ac-progress>

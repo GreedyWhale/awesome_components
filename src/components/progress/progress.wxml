@@ -1,6 +1,22 @@
+<wxs module="wxs">
+  function setProgress(percent, progressColor) {
+    var style = '';
+    if(percent) {
+      style += 'width: '+percent+'%;'
+    }
+    if(progressColor) {
+      style += 'background: '+progressColor+';'
+    }
+    return style;
+  }
+  module.exports = {
+    setProgress: setProgress
+  }
+</wxs>
+
 <view class="progress-wrapper" style="{{progressStyle}}">
-  <view class="progress" style="width: {{percent}}%; background: {{progressColor}};"></view>
-  <view class="progress-stripe progress-position-absolute" style="width: {{percent}}%"></view>
+  <view class="progress" style="{{wxs.setProgress(percent, progressColor)}}"></view>
+  <view class="progress-stripe progress-position-absolute" style="width: {{percent}}%" wx:if="{{stripe}}"></view>
   <view class="progress-text progress-position-absolute">
     <slot></slot>
   </view>

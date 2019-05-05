@@ -19,6 +19,10 @@ Component({
     progressColor: {
       type: String,
       value: ''
+    },
+    stripe: {
+      type: Boolean,
+      value: false
     }
   },
 
