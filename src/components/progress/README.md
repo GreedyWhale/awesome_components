@@ -11,7 +11,7 @@
 }
 
 <view>
-  <ac-progress></ac-progress>
+  <ac-progress percent="80"></ac-progress>
 </view>
 ```
 

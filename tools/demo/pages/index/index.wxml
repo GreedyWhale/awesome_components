@@ -5,3 +5,8 @@
 >
   <view>90/100</view>
 </ac-progress>
+<ac-give-like></ac-give-like>
+<ac-slide-view>
+  <view slot="right" style="background: red; width: 200rpx">测试</view>
+  <view slot="left" style="background: pink;">按钮</view>
+</ac-slide-view>

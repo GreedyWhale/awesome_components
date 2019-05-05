@@ -1,0 +1,35 @@
+<wxs module="wxs">
+  function setmovableViewStyle(height, sildeWrapperWidth, sildeRightWidth) {
+    var style = '';
+    if(height) { style += 'height: ' + height + 'rpx;' }
+    if(sildeWrapperWidth && sildeRightWidth) { 
+      style += 'width: ' + (sildeWrapperWidth + sildeRightWidth) + 'px;'
+    }
+    return style;
+  }
+  module.exports = {
+    setmovableViewStyle: setmovableViewStyle
+  }
+</wxs>
+
+<movable-area
+  class="slide-view-wrapper"
+  style="height: {{height}}rpx">
+  <movable-view
+    bindtouchstart="onTouchStart"
+    bindtouchend="onTouchEnd"
+    bindtap="onTap"
+    class="slide-view"
+    out-of-bounds
+    direction="horizontal"
+    inertia
+    x="{{offsetX}}"
+    style="{{wxs.setmovableViewStyle(height, sildeWrapperWidth, sildeRightWidth)}}">
+    <view style="width: {{sildeWrapperWidth}}px;" class="slide-left">
+      <slot name="left"></slot>
+    </view>
+    <view class="slide-right">
+      <slot name="right"></slot>
+    </view>
+  </movable-view>
+</movable-area>

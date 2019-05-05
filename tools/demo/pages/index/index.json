@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "ac-progress": "/components/progress/progress"
+    "ac-progress": "/components/progress/progress",
+    "ac-give-like": "/components/give-like/give-like",
+    "ac-slide-view": "/components/slide-view/slide-view"
   }
 }
