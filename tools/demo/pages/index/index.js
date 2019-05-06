@@ -11,8 +11,6 @@ Page({
     }, 1000)
   },
   a(e) {
-    this.setData({
-      value: e.detail
-    })
+    console.log(e.detail)
   }
 })

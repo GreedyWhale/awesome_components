@@ -8,7 +8,7 @@ Component({
       value: 0,
       observer(newValue) {
         if (newValue && typeof newValue === 'number') {
-          this.setData({value: newValue})
+          this.setData({value: newValue, displayedValue: newValue})
         }
       }
     },
@@ -28,11 +28,11 @@ Component({
       type: Number,
       value: 1,
     },
-    isManual: {
+    manual: {
       type: Boolean,
       value: false
     },
-    widthAdaptation: {
+    adaptation: {
       type: Boolean,
       value: false
     },
@@ -51,7 +51,8 @@ Component({
     attached() {
       if (!this.value && this.data.minNum) {
         this.setData({
-          value: this.data.minNum
+          value: this.data.minNum,
+          displayedValue: this.data.minNum
         })
       }
     }
@@ -60,7 +61,7 @@ Component({
     // eslint-disable-next-line consistent-return
     onInput({detail: {value}}) {
       const reg = /^0/
-      let result = value ? parseInt(value, 10) : 0
+      let result = value || 0
       if (result) {
         result = value.replace(reg, '')
       }
@@ -75,7 +76,7 @@ Component({
       this.triggerEvent('onconfirm', this.setValue(value))
     },
     setValue(value) {
-      let result = value ? parseInt(value, 10) : 0
+      let result = value ? parseFloat(value, 10) : 0
       if (this.data.minNum && result < this.data.minNum) {
         result = this.data.minNum
       }

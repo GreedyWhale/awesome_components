@@ -20,15 +20,15 @@
     class="ac-iconfont icon-subtract {{wxs.isDisabled(minNum, value, 'reduce') ? 'disabled' : ''}}"
     bindtap="reduce"></view>
   <view class="number-input-wrapper ellipsis" style="max-width: {{maxWidth}}rpx">
-    {{widthAdaptation ? (displayedValue || value) : ''}}
+    {{adaptation ? displayedValue : ''}}
     <input
       bindconfirm="onConfirm"
       bindblur="onBlur"
       bindinput="onInput"
       value="{{value}}"
-      disabled="{{!isManual}}"
+      disabled="{{!manual}}"
       type="number"
-      class="number-input {{widthAdaptation ? 'hide' : ''}}"/>
+      class="number-input {{adaptation ? 'hide' : ''}}"/>
   </view>
   <view
     class="ac-iconfont icon-add {{wxs.isDisabled(maxNum, value, 'add') ? 'disabled' : ''}}"
