@@ -1,0 +1,6 @@
+<view class="sticky-wrapper">
+  <view class="sticky-placeholder" style="{{sticky ? placeholderStyle : ''}}"></view>
+  <view class="sticky-content" style="{{sticky ? stickyContentStyle : ''}}">
+    <slot></slot>
+  </view>
+</view>
