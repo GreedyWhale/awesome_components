@@ -1,0 +1,36 @@
+<wxs module="wxs">
+  function isDisabled(criticalValue, currentValue, type) {
+    if(criticalValue) {
+      if(type === 'add') {
+        return parseInt(currentValue, 10) >= parseInt(criticalValue, 10)
+      }
+      if(type === 'reduce') {
+        return parseInt(currentValue, 10) <= parseInt(criticalValue, 10)
+      }
+    }
+    return false;
+  }
+  module.exports = {
+    isDisabled: isDisabled
+  }
+</wxs>
+
+<view class="number-selector-wrapper">
+  <view
+    class="ac-iconfont icon-subtract {{wxs.isDisabled(minNum, value, 'reduce') ? 'disabled' : ''}}"
+    bindtap="reduce"></view>
+  <view class="number-input-wrapper ellipsis" style="max-width: {{maxWidth}}rpx">
+    {{widthAdaptation ? (displayedValue || value) : ''}}
+    <input
+      bindconfirm="onConfirm"
+      bindblur="onBlur"
+      bindinput="onInput"
+      value="{{value}}"
+      disabled="{{!isManual}}"
+      type="number"
+      class="number-input {{widthAdaptation ? 'hide' : ''}}"/>
+  </view>
+  <view
+    class="ac-iconfont icon-add {{wxs.isDisabled(maxNum, value, 'add') ? 'disabled' : ''}}"
+    bindtap="add"></view>
+</view>

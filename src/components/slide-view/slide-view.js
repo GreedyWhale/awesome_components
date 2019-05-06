@@ -45,14 +45,17 @@ Component({
     },
     onTouchEnd(e) {
       const endX = e.changedTouches[0].pageX
-      const {startX, threshold} = this.data
+      const {
+        startX, threshold,
+        offsetX, sildeRightWidth
+      } = this.data
       if (startX - endX >= threshold) {
         this.setData({
           offsetX: -this.data.sildeRightWidth
         })
         return
       }
-      if (this.offsetX === this.sildeRightWidth && startX - endX > 0) {
+      if (offsetX === sildeRightWidth && startX - endX > 0) {
         return
       }
       this.setData({

@@ -1,7 +1,9 @@
 {
   "usingComponents": {
+    "ac-avatar": "/components/avatar/avatar",
     "ac-progress": "/components/progress/progress",
     "ac-give-like": "/components/give-like/give-like",
-    "ac-slide-view": "/components/slide-view/slide-view"
+    "ac-slide-view": "/components/slide-view/slide-view",
+    "ac-number-selector": "/components/number-selector/number-selector"
   }
 }

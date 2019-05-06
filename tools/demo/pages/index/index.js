@@ -1,6 +1,7 @@
 Page({
   data: {
-    percent: 0
+    percent: 0,
+    value: 0
   },
   onShow() {
     setTimeout(() => {
@@ -8,5 +9,10 @@ Page({
         percent: 50
       })
     }, 1000)
+  },
+  a(e) {
+    this.setData({
+      value: e.detail
+    })
   }
 })

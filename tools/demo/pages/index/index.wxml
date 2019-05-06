@@ -1,3 +1,4 @@
+<ac-avatar>Allen</ac-avatar>
 <ac-progress
   percent="{{percent}}"
   custom-style="{{ {background: '#f17ab0'} }}"
@@ -10,3 +11,9 @@
   <view slot="right" style="background: red; width: 200rpx">测试</view>
   <view slot="left" style="background: pink;">按钮</view>
 </ac-slide-view>
+<ac-number-selector bindadd="a" bindreduce="a"
+  widthAdaptation
+  isManual bind:oninput="a" bind:onblur="a" bind:onconfirm="a"
+  min-num="12" max-num="112" addNum="11" reduceNum="10"></ac-number-selector>
+
+{{value}}

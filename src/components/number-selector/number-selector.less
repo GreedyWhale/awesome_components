@@ -1,0 +1,39 @@
+@import url('../../less/icon.less');
+@import url('../../less/common.less');
+
+.number-selector-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  height: 60rpx;
+  .number-input-wrapper {
+    position: relative;
+    min-width: 70rpx;
+    height: 100%;
+    margin: 0 20rpx;
+    text-align: center;
+    font-size: 40rpx;
+    .number-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      font-size: 40rpx;
+      &.hide {
+        opacity: 0;
+      }
+    }
+  }
+  .ac-iconfont {
+    font-size: 68rpx;
+    &.disabled {
+      pointer-events: none;
+      opacity: .2;
+    }
+  }
+}
