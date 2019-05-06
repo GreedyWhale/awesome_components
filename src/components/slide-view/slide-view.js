@@ -52,14 +52,12 @@ Component({
         })
         return
       }
+      if (this.offsetX === this.sildeRightWidth && startX - endX > 0) {
+        return
+      }
       this.setData({
         offsetX: 0
       })
-    },
-    onTap() {
-      // this.setData({
-      //   offsetX: 0
-      // })
     }
   }
 })

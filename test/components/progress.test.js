@@ -2,7 +2,7 @@ const simulate = require('miniprogram-simulate')
 const setCompontentPath = require('../methods')
 
 const progress = simulate.load(setCompontentPath('progress/progress'))
-describe('give-like', () => {
+describe('progress', () => {
   it('render', () => {
     const component = simulate.render(progress)
     expect(component.dom.innerHTML).toContain('<wx-view class="progress" style=""></wx-view>')
