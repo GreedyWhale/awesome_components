@@ -1,0 +1,87 @@
+@grey: #999898;
+@green: #158b15;
+@import url('../../less/icon.less');
+
+.ac-steps-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10rpx 30rpx;
+  position: relative;
+  .ac-steps {
+    font-size: 24rpx;
+    color: @grey;
+    padding-bottom: 20rpx;
+    position: relative;
+    z-index: 3;
+    &-title {
+      transition: all .5s;
+      &.ac-active {
+        color: @green;
+      }
+    }
+    &-icon-wrapper {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      padding: 0 10rpx;
+      transform: translate(-50%, 50%);
+      background: #fff;
+      .ac-steps-icon {
+        width: 10rpx;
+        height: 10rpx;
+        border-radius: 50%;
+        background: @grey;
+      }
+      .ac-iconfont {
+        font-size: 24rpx;
+      }
+      &.ac-active,
+      &.ac-finished {
+        .ac-iconfont {
+          color: @green;
+        }
+        .ac-steps-icon {
+          background: @green;
+        }
+      }
+    }
+    &:nth-child(3), 
+    &:last-child {
+      .ac-steps-icon-wrapper {
+        transform: translateY(50%);
+      }
+    }
+    &:nth-child(3) {
+      .ac-steps-icon-wrapper {
+        left: 0;
+      }
+    }
+    &:last-child {
+      .ac-steps-icon-wrapper { 
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+  .ac-steps-default-line {
+    background: @grey;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2rpx;
+    width: 100%;
+  }
+  .ac-steps-active-line {
+    background: @green;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2rpx;
+    width: 0;
+    z-index: 1;
+    transition: all .5s;
+  }
+}
