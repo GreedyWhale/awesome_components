@@ -1,7 +1,7 @@
 const simulate = require('miniprogram-simulate')
 const setCompontentPath = require('../methods')
 
-const numberSelector = simulate.load(setCompontentPath('number-selector/number-selector'))
+const numberSelector = simulate.load(setCompontentPath('components/number-selector/number-selector'))
 describe('number-selector', () => {
   it('render', () => {
     const component = simulate.render(numberSelector)

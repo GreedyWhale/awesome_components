@@ -1,7 +1,7 @@
 const simulate = require('miniprogram-simulate')
 const setCompontentPath = require('../methods')
 
-const slideView = simulate.load(setCompontentPath('slide-view/slide-view'))
+const slideView = simulate.load(setCompontentPath('components/slide-view/slide-view'))
 describe('slide-view', () => {
   it('render', () => {
     const component = simulate.render(slideView)

@@ -8,7 +8,7 @@ Component({
       type: Array,
       value: []
     },
-    activeIndex: {
+    currentStep: {
       type: Number,
       value: 1,
       observer(newValue) {
@@ -27,23 +27,23 @@ Component({
     stepsData: []
   },
   lifetimes: {
-    ready() {
+    attached() {
       if (!this.data.stepsData.length) {
-        this.formattedSteps(this.data.activeIndex)
+        this.formattedSteps(this.data.currentStep)
       }
     }
   },
   methods: {
-    formattedSteps(activeIndex) {
+    formattedSteps(currentStep) {
       const {steps} = this.data
       let newSteps = []
       // eslint-disable-next-line max-len
-      newSteps = steps.map((value, index) => Object.assign({}, value, this.setStepsItem(activeIndex, index)))
+      newSteps = steps.map((value, index) => Object.assign({}, {title: value}, this.setStepsItem(currentStep, index)))
       this.setData({
         stepsData: newSteps
       })
     },
-    setStepsItem(activeIndex, index) {
+    setStepsItem(currentStep, index) {
       const newIndex = index + 1
       const {colors} = this.data
       const item = {
@@ -51,12 +51,12 @@ Component({
         stepClass: '',
         stepsIconStyle: ''
       }
-      if (activeIndex === newIndex) {
+      if (currentStep === newIndex) {
         item.stepStyle = colors.active ? `color: ${colors.active};` : ''
         item.stepsIconStyle = colors.active ? `color: ${colors.active};` : ''
         item.stepClass = 'ac-active'
       }
-      if (activeIndex > newIndex) {
+      if (currentStep > newIndex) {
         item.stepStyle = colors.finished ? `color: ${colors.finished};` : ''
         item.stepsIconStyle = colors.finished ? `color: ${colors.finished};` : ''
         item.stepClass = 'ac-finished'

@@ -1,7 +1,7 @@
 const simulate = require('miniprogram-simulate')
 const setCompontentPath = require('../methods')
 
-const avatar = simulate.load(setCompontentPath('avatar/avatar'), 'ac-avatar')
+const avatar = simulate.load(setCompontentPath('components/avatar/avatar'), 'ac-avatar')
 describe('avatar', () => {
   test('render', () => {
     const root = simulate.load({

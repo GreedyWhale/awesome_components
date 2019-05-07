@@ -23,23 +23,20 @@
   <view class="ac-steps-default-line"></view>
   <view
     class="ac-steps-active-line"
-    style="{{wxs.setActiveLineStyle(colors.finished, steps.length - 1, activeIndex - 1)}}"></view>
-  <block wx:for="{{stepsData}}" wx:key="{{item.title}}">
-    <view class="ac-steps">
+    style="{{wxs.setActiveLineStyle(colors.finished, steps.length - 1, currentStep - 1)}}"></view>
+    <view class="ac-steps" wx:for="{{stepsData}}" wx:key="{{item.title}}">
       <view
         class="ac-steps-title custom-class-title {{item.stepClass}}"
         style="{{item.stepStyle}}">{{item.title}}</view>
-      <view class="ac-steps-desc" wx:if="{{false}}">{{item.desc}}</view>
       <view class="ac-steps-icon-wrapper {{item.stepClass}}">
         <view
-          wx:if="{{activeIndex === index + 1}}"
+          wx:if="{{currentStep === index + 1}}"
           class="ac-iconfont icon-finished custom-class-icon"
           style="{{item.stepsIconStyle}}"></view>
         <view
           wx:else
           class="ac-steps-icon"
-          style="{{colors.finished && activeIndex > (index + 1) ? 'background: ' + colors.finished + ';' : ''}}"></view>
+          style="{{colors.finished && currentStep > (index + 1) ? 'background: ' + colors.finished + ';' : ''}}"></view>
       </view>
-    </view>
-  </block>
+  </view>
 </view>

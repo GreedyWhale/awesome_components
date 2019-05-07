@@ -4,7 +4,7 @@
 
 ```
 {
-  "navigationBarTitleText": "GiveLike",
+  "navigationBarTitleText": "Progress",
   "usingComponents": {
     "ac-progress": "@csr/awesome_components/progress/progress"
   }
@@ -15,11 +15,6 @@
 </view>
 ```
 
-### 进度
-
-```
-<ac-progress percent="20"></ac-progress>
-```
 
 ### 显示进度
 ```
