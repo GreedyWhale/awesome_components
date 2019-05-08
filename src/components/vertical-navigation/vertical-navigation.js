@@ -3,6 +3,15 @@ Component({
     multipleSlots: true,
   },
   properties: {
+    scrollHeight: {
+      type: Number,
+      value: 0,
+      observer(newValue) {
+        if (newValue && typeof newValue === 'number') {
+          this.setData({scrollStyle: `height: ${newValue}rpx;`})
+        }
+      }
+    },
     navLength: {
       type: Number,
       value: 0
@@ -31,7 +40,8 @@ Component({
     contentScrollTop: 0,
     navItemHeight: 0,
     navIndex: null,
-    scrollLock: false
+    scrollLock: false,
+    scrollStyle: ''
   },
   lifetimes: {
     ready() {

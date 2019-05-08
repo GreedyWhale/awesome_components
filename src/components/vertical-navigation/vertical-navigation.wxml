@@ -1,10 +1,15 @@
 <view class="ac-nav-wrapper">
-  <scroll-view scroll-top="{{navScrollTop}}" scroll-y scroll-with-animation class="ac-scroll-view ac-nav-bar">
+  <scroll-view
+    scroll-top="{{navScrollTop}}"
+    scroll-y scroll-with-animation
+    class="ac-scroll-view ac-nav-bar"
+    style="{{scrollStyle}}">
     <slot name="nav"></slot>
   </scroll-view>
-  <scroll-view bindscroll="onScroll" scroll-top="{{contentScrollTop}}"
+  <scroll-view
+    bindscroll="onScroll" scroll-top="{{contentScrollTop}}"
     scroll-y scroll-with-animation class="ac-scroll-view ac-nav-content"
-    bindscroll="onScroll">
+    bindscroll="onScroll" style="{{scrollStyle}}">
     <slot name="content"></slot>
   </scroll-view>
 </view>
