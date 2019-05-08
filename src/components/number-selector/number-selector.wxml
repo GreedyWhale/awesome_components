@@ -17,8 +17,10 @@
 
 <view class="number-selector-wrapper">
   <view
-    class="ac-iconfont icon-subtract {{wxs.isDisabled(minNum, value, 'reduce') ? 'disabled' : ''}}"
-    bindtap="reduce"></view>
+    class="ac-icon-wrapper {{wxs.isDisabled(minNum, value, 'reduce') ? 'disabled' : ''}}"
+    bindtap="reduce">
+    <view class="ac-iconfont icon-reduce"></view>
+    </view>
   <view class="number-input-wrapper ellipsis" style="max-width: {{maxWidth}}rpx">
     {{adaptation ? displayedValue : ''}}
     <input
@@ -31,6 +33,8 @@
       class="number-input {{adaptation ? 'hide' : ''}}"/>
   </view>
   <view
-    class="ac-iconfont icon-add {{wxs.isDisabled(maxNum, value, 'add') ? 'disabled' : ''}}"
-    bindtap="add"></view>
+    class="ac-icon-wrapper {{wxs.isDisabled(maxNum, value, 'add') ? 'disabled' : ''}}"
+    bindtap="add">
+    <view class="ac-iconfont icon-add"></view>
+  </view>
 </view>

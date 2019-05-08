@@ -1,19 +1,22 @@
 @import url('../../less/icon.less');
 @import url('../../less/common.less');
 
+@grey: #dfe2e7;
 .number-selector-wrapper {
-  display: flex;
+  display: inline-flex;
+  vertical-align: middle;
   flex-direction: row;
   align-items: center;
   position: relative;
   height: 60rpx;
   .number-input-wrapper {
     position: relative;
-    min-width: 70rpx;
+    min-width: 80rpx;
     height: 100%;
-    margin: 0 20rpx;
+    margin: 0 8rpx;
     text-align: center;
     font-size: 40rpx;
+    background: @grey;
     .number-input {
       position: absolute;
       top: 0;
@@ -23,17 +26,32 @@
       height: 100%;
       width: 100%;
       text-align: center;
-      font-size: 40rpx;
+      font-size: 32rpx;
       &.hide {
         opacity: 0;
       }
     }
   }
-  .ac-iconfont {
-    font-size: 68rpx;
+  .ac-icon-wrapper {
+    background: @grey;
+    padding: 0 20rpx;
+    height: 100%;
+    display: flex;
+    align-items: center;
     &.disabled {
       pointer-events: none;
-      opacity: .2;
+      opacity: .4;
     }
+    &:first-child {
+      border-top-left-radius: 8rpx;
+      border-bottom-left-radius: 8rpx;
+    }
+    &:last-child {
+      border-top-right-radius: 8rpx;
+      border-bottom-right-radius: 8rpx;
+    }
+  }
+  .ac-iconfont {
+    font-size: 32rpx;
   }
 }
