@@ -90,3 +90,6 @@ Page({
 | :---: | :----: |
 | custom-class-title | 步骤名样式类 | 
 | custom-class-icon | 步骤图标样式类 | 
+
+## 注意：
+currentStep从1开始

@@ -1,0 +1,37 @@
+.ac-nav-item {
+  box-sizing: border-box;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  position: relative;
+}
+.ac-nav-item.ac-nav-item-active {
+  color: #3275f1;
+  background: #eeeded;
+}
+.ac-nav-item.ac-nav-item-active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  height: 30%;
+  width: 8rpx;
+  background: #3275f1;
+  transform: translateY(-50%);
+}
+.ac-nav-scroll-right {
+  background: #eeeded;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  padding-bottom: 20rpx;
+}
+.ac-nav-scroll-right-item {
+  background: #fff;
+  padding: 20rpx;
+  height: calc(100vh - 20rpx);
+  box-sizing: border-box;
+  border-top: 20rpx solid #eeeded;
+}
