@@ -1,7 +1,7 @@
 const simulate = require('miniprogram-simulate')
-const setCompontentPath = require('../methods')
+const setcomponentPath = require('../methods')
 
-const progress = simulate.load(setCompontentPath('components/progress/progress'))
+const progress = simulate.load(setcomponentPath('components/progress/progress'))
 describe('progress', () => {
   it('render', () => {
     const component = simulate.render(progress)

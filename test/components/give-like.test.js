@@ -1,7 +1,7 @@
 const simulate = require('miniprogram-simulate')
-const setCompontentPath = require('../methods')
+const setcomponentPath = require('../methods')
 
-const giveLike = simulate.load(setCompontentPath('components/give-like/give-like'))
+const giveLike = simulate.load(setcomponentPath('components/give-like/give-like'))
 describe('give-like', () => {
   it('render', () => {
     const component = simulate.render(giveLike)

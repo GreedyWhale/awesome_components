@@ -49,7 +49,6 @@ Component({
       this.getNavItemHeight()
     }
   },
-  pageLifetimes: {},
   methods: {
     collectContentTop() {
       this.topList = []
@@ -102,9 +101,10 @@ Component({
     },
     updateContentScrollTop(activeIndex) {
       const index = this.topList.findIndex(value => value.id === `#${this.data.contentItemId}${activeIndex}`)
+      const navScrollTop = (activeIndex * this.data.navItemHeight) - this.data.navItemHeight
       this.setData({
         contentScrollTop: this.topList[index].top,
-        navScrollTop: (activeIndex * this.data.navItemHeight) - this.data.navItemHeight,
+        navScrollTop: navScrollTop < 0 ? 0 : navScrollTop,
         scrollLock: true,
       })
     }

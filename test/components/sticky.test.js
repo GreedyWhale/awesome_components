@@ -1,7 +1,7 @@
 const simulate = require('miniprogram-simulate')
-const setCompontentPath = require('../methods')
+const setcomponentPath = require('../methods')
 
-const sticky = simulate.load(setCompontentPath('components/sticky/sticky'))
+const sticky = simulate.load(setcomponentPath('components/sticky/sticky'))
 // 由于无法模拟页面滚动，只能测试js
 describe('sticky', () => {
   it('测试 steps', async () => {
@@ -16,5 +16,6 @@ describe('sticky', () => {
     updateStickyElement.call(component, 300)
     await simulate.sleep(10)
     expect(component.data.sticky).toEqual(true)
+    component.detach()
   })
 })

@@ -1,7 +1,7 @@
 const simulate = require('miniprogram-simulate')
-const setCompontentPath = require('../methods')
+const setcomponentPath = require('../methods')
 
-const slideView = simulate.load(setCompontentPath('components/slide-view/slide-view'))
+const slideView = simulate.load(setcomponentPath('components/slide-view/slide-view'))
 describe('slide-view', () => {
   it('render', () => {
     const component = simulate.render(slideView)
@@ -31,6 +31,7 @@ describe('slide-view', () => {
     await simulate.sleep(10)
     expect(fakeOnTouchStart).toBeCalled()
     expect(fakeOnTouchEnd).toBeCalled()
+    component.detach()
   })
   it('slide-view组件 的touch事件会触发滑动', async () => {
     const component = simulate.render(slideView)
