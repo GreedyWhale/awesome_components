@@ -1,0 +1,53 @@
+.ac-tabs-header-wrapper {
+  height: 80rpx;
+  .ac-tabs-header {
+    position: relative;
+    float: left;
+    white-space: nowrap;
+    &-item {
+      display: inline-block;
+      padding: 0 30rpx;
+      line-height: 80rpx;
+      font-size: 32rpx;
+      text-align: center;
+      color: #868686;
+      &.ac-tabs-nav-disabled {
+        color: #c8c9cc;
+        pointer-events: none;
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      height: 2rpx;
+      background: #e5e5e5;
+    }
+    &-line {
+      position: absolute;
+      left: 0;
+      bottom: 2rpx;
+      height: 6rpx;
+      background: #226bf1;
+      transition: all .3s;
+    }
+  }
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.ac-tabs-body {
+  position: relative;
+  overflow: hidden;
+  &-track {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    transition: all .3s;
+    will-change: left;
+  }
+}

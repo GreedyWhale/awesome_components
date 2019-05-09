@@ -1,0 +1,19 @@
+<view>
+  <scroll-view scroll-left="{{scrollY}}"
+    scroll-x scroll-with-animation
+    class="ac-tabs-header-wrapper">
+    <view class="ac-tabs-header">
+      <view
+        wx:for="{{titles}}" wx:key="{{item}}" bindtap="clickTab" id="ac-tabs-header-item-{{index}}"
+        class="ac-tabs-header-item {{disabled[index] ? 'ac-tabs-nav-disabled' : ''}}" data-index="{{index}}">
+        {{item}}
+      </view>
+      <view class="ac-tabs-header-line" style="{{activeLineStyle}}"></view>
+    </view>
+  </scroll-view>
+  <view class="ac-tabs-body" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd">
+    <view class="ac-tabs-body-track" style="{{tabsBodyTrackStyle}}">
+      <slot></slot>
+    </view>
+  </view>
+</view>
