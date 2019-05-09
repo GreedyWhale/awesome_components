@@ -72,7 +72,7 @@ describe('number-selector', () => {
     add.dispatchEvent('tap')
     await simulate.sleep(10)
     expect(component.data.value).toEqual(1)
-    const reduce = component.querySelector('.icon-subtract')
+    const reduce = component.querySelector('.icon-reduce')
     reduce.dispatchEvent('tap')
     await simulate.sleep(10)
     expect(component.data.value).toEqual(0)

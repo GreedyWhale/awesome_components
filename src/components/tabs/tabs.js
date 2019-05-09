@@ -48,7 +48,8 @@ Component({
     activeIndex: 0,
     scrollY: 0,
     tabsBodyTrackStyle: '',
-    disabled: []
+    disabled: [],
+    wrapperLeft: 0
   },
   lifetimes: {
     ready() {
@@ -86,7 +87,7 @@ Component({
       })
     },
     checkDefaultActive() {
-      this.upDatePanels(this.data.defaultActive)
+      this.updatePanels(this.data.defaultActive)
       this.setData({
         activeIndex: this.data.defaultActive
       }, () => this.updateActiveLine())
@@ -127,7 +128,7 @@ Component({
         node.setData({width: rect.width, animated: this.data.animated})
       })
     },
-    upDatePanels(index) {
+    updatePanels(index) {
       const nodes = this.getRelationNodes('../tabs-panel/tabs-panel')
       if (this.data.animated) {
         this.setTabsBodyTrackStyle(index)
@@ -173,7 +174,7 @@ Component({
       this.updateActiveIndex(activeIndex, 'onchange')
     },
     updateActiveIndex(index, eventName) {
-      this.upDatePanels(index)
+      this.updatePanels(index)
       this.triggerEvent(eventName, {index, title: this.data.titles[index]})
       this.setData({
         activeIndex: index
