@@ -36,7 +36,7 @@ Page({
 ### API
 | 属性 | 类型 | 说明 | 默认值 |
 | :---: | :----: | :----: | :----: |
-| scrollTop | Number | 页面滚动距离 |
+| scroll-top | Number | 页面滚动距离 |
 | distance | Number | sticky定位的元素离顶部的距离 |
 
 ### slot
