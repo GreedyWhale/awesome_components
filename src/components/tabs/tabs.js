@@ -89,15 +89,15 @@ Component({
       this.upDatePanels(this.data.defaultActive)
       this.setData({
         activeIndex: this.data.defaultActive
-      }, () => this.upDateActiveLine())
+      }, () => this.updateActiveLine())
     },
-    upDateActiveLine(parentRect = null) {
+    updateActiveLine(parentRect = null) {
       const scrollLeft = parentRect ? parentRect.scrollLeft : 0
       const index = this.data.activeIndex
       this.getTabStyle(index)
         .then(rect => {
           const left = rect.left - this.data.wrapperLeft + scrollLeft
-          const scrollY = parentRect ? this.getScrollY(parentRect, rect) : 0
+          const scrollY = parentRect ? this.getScrollY(parentRect, rect) : left
           this.setData({
             activeLineStyle: `width: ${rect.width}px; left: ${left}px`,
             scrollY
@@ -178,7 +178,7 @@ Component({
       this.setData({
         activeIndex: index
       }, () => {
-        this.getScrollStyle().then((rect) => this.upDateActiveLine(rect))
+        this.getScrollStyle().then((rect) => this.updateActiveLine(rect))
       })
     }
   }
