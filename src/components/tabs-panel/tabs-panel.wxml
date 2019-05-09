@@ -1,3 +1,5 @@
-<view class="ac-tabs-body-panel" style="width: {{width}}px;" wx:if="{{animated || activePanel === title}}">
+<view
+  class="ac-tabs-body-panel"
+  style="width: {{width}}px;" wx:if="{{animated || activePanel === title}}">
   <slot></slot>
 </view>

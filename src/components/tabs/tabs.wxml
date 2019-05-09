@@ -5,7 +5,8 @@
     <view class="ac-tabs-header">
       <view
         wx:for="{{titles}}" wx:key="{{item}}" bindtap="clickTab" id="ac-tabs-header-item-{{index}}"
-        class="ac-tabs-header-item {{disabled[index] ? 'ac-tabs-nav-disabled' : ''}}" data-index="{{index}}">
+        class="ac-tabs-header-item {{disabled[index] ? 'ac-tabs-nav-disabled' : ''}} {{activeIndex === index ? 'ac-tabs-nav-active' : ''}}"
+        data-index="{{index}}">
         {{item}}
       </view>
       <view class="ac-tabs-header-line" style="{{activeLineStyle}}"></view>
