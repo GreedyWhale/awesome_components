@@ -1,6 +1,6 @@
-<view class="ac-dialog" wx:if="{{visible}}">
+<view class="ac-dialog" wx:if="{{visible}}" style="z-index: {{zIndex}}">
   <view class="ac-dialog-box {{startAnimatim ? 'show' : ''}}">
-    <block wx:if="{{custom}}">
+    <block wx:if="{{!custom}}">
       <view class="ac-dialog-header" wx:if="{{title}}">
         <view class="ac-dialog-title">{{title}}</view>
         <view class="ac-dialog-close-btn" wx:if="{{visibleCloseIcon}}" bindtap="onClose">
@@ -21,6 +21,8 @@
           bindtap="onConfirm">{{confirmDesc}}</button>
       </view>
     </block>
-    <slot></slot>
+    <block wx:else>
+      <slot></slot>
+    </block>
   </view>
 </view>

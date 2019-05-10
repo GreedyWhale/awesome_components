@@ -41,7 +41,11 @@ Component({
     },
     custom: {
       type: Boolean,
-      value: true
+      value: false
+    },
+    zIndex: {
+      type: String,
+      value: '1'
     }
   },
 
