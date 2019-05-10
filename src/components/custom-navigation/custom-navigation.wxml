@@ -1,0 +1,29 @@
+<view class="ac-custom-placeholder" style="{{navBarStyles}}"></view>
+<view
+  class="ac-custom-nav-bar"
+  style="{{navBarStyles}}">
+  <view class="ac-content" style="{{titleStyles}}">
+    <view class="ac-content-left" style="{{leftCornerStyles}}">
+      <view
+        class="ac-control-btns"
+        style="width: {{pillwidth}}px;" wx:if="{{!customLeftCorner && visibleLeftCornerBtns}}">
+        <view
+          class="ac-go-back ac-iconfont icon-arrow-left"
+          style="color: {{navBarIconColor || navBarTextColor}};"
+          bindtap="goBack"></view>
+        <view
+          class="ac-go-home ac-iconfont icon-home"
+          style="color: {{navBarIconColor || navBarTextColor}};"
+          bindtap="goHome"></view>
+      </view>
+      <slot name="left-corner"></slot>
+    </view>
+    <view
+      class="ac-content-title custom-class-title" wx:if="{{title}}"
+      style="color: {{navBarTextColor}};">{{title}}</view>
+    <view class="ac-content-middle" style="padding-right: {{pillRight + pillwidth}}px;">
+       <slot name="content"></slot>
+    </view>
+  </view>
+  <image mode="{{imgMode}}"wx:if="{{bgImage}}" src="{{bgImage}}" class="ac-custom-bg-img custom-class-img"/>
+</view>
