@@ -10,9 +10,7 @@ Component({
       type: Boolean,
       value: false,
       observer(newValue) {
-        this.setData({
-          startAnimatim: newValue
-        })
+        this.toggleDialog(newValue)
       }
     },
     title: {
@@ -50,9 +48,22 @@ Component({
   },
 
   data: {
-    startAnimatim: false
+    startAnimatim: false,
+    visibleDialog: false
   },
   methods: {
+    toggleDialog(visibleDialog) {
+      if (visibleDialog) {
+        this.setData({
+          startAnimatim: visibleDialog,
+          visibleDialog
+        })
+        return
+      }
+      this.setData({
+        startAnimatim: visibleDialog,
+      })
+    },
     onClose() {
       this.triggerEvent('onclose')
     },
@@ -61,6 +72,13 @@ Component({
     },
     onConfirm() {
       this.triggerEvent('onconfirm')
+    },
+    onAnimationEnd() {
+      if (!this.data.visible) {
+        this.setData({
+          visibleDialog: false
+        })
+      }
     }
   }
 })

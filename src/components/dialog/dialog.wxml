@@ -1,28 +1,32 @@
-<view class="ac-dialog" wx:if="{{visible}}" style="z-index: {{zIndex}}">
-  <view class="ac-dialog-box {{startAnimatim ? 'show' : ''}}">
-    <block wx:if="{{!custom}}">
-      <view class="ac-dialog-header" wx:if="{{title}}">
-        <view class="ac-dialog-title">{{title}}</view>
-        <view class="ac-dialog-close-btn" wx:if="{{visibleCloseIcon}}" bindtap="onClose">
-          <view class="ac-iconfont icon-close"></view>
+<view wx:if="{{visibleDialog}}" >
+  <view
+    class="ac-dialog {{startAnimatim ? 'show' : 'hide'}}"
+    style="z-index: {{zIndex}}" bindanimationend="onAnimationEnd">
+    <view class="ac-dialog-box">
+      <block wx:if="{{!custom}}">
+        <view class="ac-dialog-header" wx:if="{{title}}">
+          <view class="ac-dialog-title">{{title}}</view>
+          <view class="ac-dialog-close-btn" wx:if="{{visibleCloseIcon}}" bindtap="onClose">
+            <view class="ac-iconfont icon-close"></view>
+          </view>
         </view>
-      </view>
-      <view class="ac-dialog-body">
-        <view class="ac-dialog-content" wx:if="{{content}}">
-          {{content}}
+        <view class="ac-dialog-body">
+          <view class="ac-dialog-content" wx:if="{{content}}">
+            {{content}}
+          </view>
         </view>
-      </view>
-      <view class="ac-dialog-footer">
-        <button
-          class="ac-dialog-button ac-dialog-button-cancel"
-          wx:if="{{visibleCancelBtn}}" bindtap="onCancel">{{cancelDesc}}</button>
-        <button
-          class="ac-dialog-button ac-dialog-button-confirm"
-          bindtap="onConfirm">{{confirmDesc}}</button>
-      </view>
-    </block>
-    <block wx:else>
-      <slot></slot>
-    </block>
+        <view class="ac-dialog-footer">
+          <button
+            class="ac-dialog-button ac-dialog-button-cancel"
+            wx:if="{{visibleCancelBtn}}" bindtap="onCancel">{{cancelDesc}}</button>
+          <button
+            class="ac-dialog-button ac-dialog-button-confirm"
+            bindtap="onConfirm">{{confirmDesc}}</button>
+        </view>
+      </block>
+      <block wx:else>
+        <slot></slot>
+      </block>
+    </view>
   </view>
 </view>

@@ -3,11 +3,21 @@
 @keyframes show {
   0% {
     opacity: 0;
-    transform: scale(1.5)
+    transform: scale(0);
   }
   100% {
     opacity: 1;
-    transform: scale(1)
+    transform: scale(1);
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
   }
 }
 .ac-dialog {
@@ -23,15 +33,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center center;
+  &.show {
+    animation: show 300ms 100ms ease-in forwards;
+  }
+  &.hide {
+    animation: hide 300ms ease-in forwards;
+  }
   &-box {
     background: #fff;
     border-radius: 8rpx;
     width: 600rpx;
-    opacity: 0;
-    transform: scale(1.5);
-    &.show {
-      animation: show 300ms ease-in forwards;
-    }
   }
   &-header {
     display: flex;
