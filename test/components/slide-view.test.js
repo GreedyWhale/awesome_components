@@ -14,7 +14,7 @@ describe('slide-view', () => {
     expect(wrapperElem.dom.style._values.height).toEqual('100px')
     expect(slideViewElem.dom.style._values.height).toEqual('100px')
   })
-  it('slide-view组件会触发 ready生命周期 & touch时间', async () => {
+  it('slide-view组件会触发 ready生命周期 & touch事件', async () => {
     const fakeGetElemStyle = jest.fn()
     const fakeOnTouchStart = jest.fn()
     const fakeOnTouchEnd = jest.fn()
