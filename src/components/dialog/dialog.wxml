@@ -1,0 +1,26 @@
+<view class="ac-dialog" wx:if="{{visible}}">
+  <view class="ac-dialog-box {{startAnimatim ? 'show' : ''}}">
+    <block wx:if="{{custom}}">
+      <view class="ac-dialog-header" wx:if="{{title}}">
+        <view class="ac-dialog-title">{{title}}</view>
+        <view class="ac-dialog-close-btn" wx:if="{{visibleCloseIcon}}" bindtap="onClose">
+          <view class="ac-iconfont icon-close"></view>
+        </view>
+      </view>
+      <view class="ac-dialog-body">
+        <view class="ac-dialog-content" wx:if="{{content}}">
+          {{content}}
+        </view>
+      </view>
+      <view class="ac-dialog-footer">
+        <button
+          class="ac-dialog-button ac-dialog-button-cancel"
+          wx:if="{{visibleCancelBtn}}" bindtap="onCancel">{{cancelDesc}}</button>
+        <button
+          class="ac-dialog-button ac-dialog-button-confirm"
+          bindtap="onConfirm">{{confirmDesc}}</button>
+      </view>
+    </block>
+    <slot></slot>
+  </view>
+</view>
