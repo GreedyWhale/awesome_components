@@ -39,7 +39,6 @@
   </view>
 </template>
 
-
 <template name="flood">
   <view class="ac-loading-flood" style="{{wxs.getLoadingStyles(width, height, color, 'border')}}">
     <view class="ac-loading-flood-inner" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
