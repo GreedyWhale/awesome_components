@@ -1,0 +1,114 @@
+<wxs module="wxs">
+  function getWidthAndHeight(width, height) {
+    var styles = '';
+    if(width) {
+      styles += 'width: ' + width + 'rpx;'
+    }
+    if(height) {
+      styles += 'height: ' + height + 'rpx;'
+    }
+    return styles
+  }
+  function getColor(color, type) {
+    var styles = {
+      background: 'background-color:' + color + ';'
+      border: 'border-color: ' + color + ';'
+      boomerang: 'border-top-color: ' + color + ';' + 'border-bottom-color: ' + color + ';'
+      snake: 'border-color: ' + color +' transparent transparent transparent;',
+      borderTop: 'border-top-color: ' + color + ';'
+    }
+    return styles[type]
+  }
+  function getLoadingStyles(width, height, color, loadingType) {
+    var styles = getWidthAndHeight(width, height);
+    if(color) {
+      styles += getColor(color, loadingType)
+    }
+    return styles;
+  }
+  module.exports = {
+    getLoadingStyles: getLoadingStyles
+  }
+</wxs>
+
+<template name="grow">
+  <view class="ac-loading-grow" style="{{wxs.getLoadingStyles(width, height)}}">
+    <view
+      wx:for="{{[1,2,3,4]}}" wx:key="{{index}}"
+      class="ac-loading-grow-item" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
+  </view>
+</template>
+
+
+<template name="flood">
+  <view class="ac-loading-flood" style="{{wxs.getLoadingStyles(width, height, color, 'border')}}">
+    <view class="ac-loading-flood-inner" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
+  </view>
+</template>
+
+<template name="ring">
+  <view class="ac-loading-ring" style="{{wxs.getLoadingStyles(width, height, color, 'border')}}">
+  </view>
+</template>
+
+<template name="pendulum">
+  <view class="ac-loading-pendulum" style="{{wxs.getLoadingStyles(width, height)}}">
+    <view class="ac-loading-pendulum-item" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
+    <view class="ac-loading-pendulum-item" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
+    <view class="ac-loading-pendulum-item" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
+  </view>
+</template>
+
+<template name="boomerang">
+  <view class="ac-loading-boomerang" style="{{wxs.getLoadingStyles(width, height, color, 'boomerang')}}">
+  </view>
+</template>
+
+<template name="dots">
+  <view class="ac-loading-dots" style="{{wxs.getLoadingStyles(width, height)}}">
+    <view class="ac-loading-dots-item" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
+    <view class="ac-loading-dots-item" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
+    <view class="ac-loading-dots-item" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
+  </view>
+</template>
+
+<template name="square">
+  <view class="ac-loading-square" style="{{wxs.getLoadingStyles(width, height, color, 'background')}}"></view>
+</template>
+
+<template name="sudoku">
+  <view class="ac-loading-sudoku" style="{{wxs.getLoadingStyles(width, height)}}">
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:key="{{index}}"
+      class="ac-loading-sudoku-item" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"></view>
+  </view>
+</template>
+
+<template name="snake">
+  <view class="ac-loading-snake" style="{{wxs.getLoadingStyles(width, height)}}">
+    <view
+      style="{{wxs.getLoadingStyles(null, null, color, 'snake')}}"
+      wx:for="{{[1,2,3,4]}}" wx:key="{{index}}" class="ac-loading-snake-item"></view>
+  </view>
+</template>
+
+
+<template name="loading">
+  <view class="ac-loading" style="{{wxs.getLoadingStyles(width, height)}}">
+    <view class="ac-loading-bg" style="{{wxs.getLoadingStyles(null, null, color, 'border')}}"></view>
+    <view class="ac-loading-border" style="{{wxs.getLoadingStyles(null, null, color, 'borderTop')}}"></view>
+  </view>
+</template>
+
+<template name="wave">
+  <view class="ac-loading-wave" style="{{wxs.getLoadingStyles(width, height)}}">
+    <view
+      class="ac-loading-wave-item" style="{{wxs.getLoadingStyles(null, null, color, 'background')}}"
+      wx:for="{{[1,2,3]}}" wx:key="{{index}}"></view>
+  </view>
+</template>
+
+<view class="ac-loading-wrapper custom-class-root">
+  <block wx:if="{{type}}">
+    <template is="{{type}}" data="{{width, height, color}}"></template>
+  </block>
+</view>
