@@ -1,0 +1,34 @@
+<wxs module="wxs">
+  function setNoticeBarStyles(top, visibleIcon, close, color, bgColor) {
+    var styles = ''
+    if(top) {
+      styles += 'top: ' + top + 'px;'
+    }
+    if(visibleIcon) {
+      styles += 'padding-left: ' + 50 + 'rpx;'
+    }
+    if(close) {
+      styles += 'padding-right: ' + 50 + 'rpx;'
+    }
+    if(color) {
+      styles += 'color: ' + color + ';'
+    }
+    if(bgColor) {
+      styles += 'background-color: ' + bgColor + ';'
+    }
+    return styles
+  }
+  module.exports = {setNoticeBarStyles: setNoticeBarStyles}
+</wxs>
+<view class="ac-notice-bar" bindtap="onTap"
+  style="{{wxs.setNoticeBarStyles(top, visibleIcon, close, color, bgColor)}}">
+  <view class="ac-notice-bar-prefix" wx:if="{{visibleIcon}}">
+    <view class="ac-iconfont icon-notice" style="color: {{iconColor || color}}"></view>
+  </view>
+  <view
+    class="ac-notice-bar-text {{autoplay ? 'ac-notice-bar-text-autoplay' : 'ellipsis'}}"
+    style="animation-duration: {{speed}}s">{{text}}</view>
+  <view class="ac-notice-bar-suffix" wx:if="{{close}}" catchtap="onClose">
+    <view class="ac-iconfont icon-close" style="color: {{iconColor || color}}"></view>
+  </view>
+</view>

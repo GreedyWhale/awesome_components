@@ -1,0 +1,50 @@
+@import url('../../less/icon.less');
+@import url('../../less/common.less');
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%)
+  }
+  to {
+    transform: translateX(-100%)
+  }
+}
+.ac-notice-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  &-text {
+    white-space: nowrap;
+    font-size: 32rpx;
+    &-autoplay {
+      animation-name: scroll;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+  &-prefix,
+  &-suffix {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    z-index: 1;
+    background: inherit;
+  }
+  &-prefix {
+    left: 0
+  }
+  &-suffix {
+    right: 0;
+  }
+}

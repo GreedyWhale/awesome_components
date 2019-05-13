@@ -50,7 +50,7 @@
 ### API
 | 属性 | 类型 | 说明 | 默认值 |
 | :---: | :----: | :----: | :----: |
-| default-value | string | 默认值 | 0
+| default-value | String | 默认值 | 0
 | max-num | Number | 最大值 | 
 | min-num | Number | 最小值  |
 | add-num | Number | 每次增加的值  |
