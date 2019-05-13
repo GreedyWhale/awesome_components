@@ -1,0 +1,20 @@
+<view class="ac-watermark-wrapper">
+  <view class="ac-watermark-toolbar">
+    <button bindtap="chooseImg" plain type="primary">选择图片</button>
+    <input type="text" bindinput="onInput" placeholder="请输入水印文字，输入后的文字可拖动"/>
+    <input type="text" bindblur="setwatermarkColor" placeholder="输入字体颜色，默认#FFFFFF"/>
+    <button bindtap="generate" type="primary" loading="{{disabled}}">生成</button>
+  </view>
+  <view class="ac-watermark-img-wrapper">
+    <view
+      class="ac-watermark-text" catchtouchmove="onTouchMove"
+      style="color: {{color}}; transform: translate({{textLeft}}px, {{textTop}}px);"
+      wx:if="{{watermarkText}}">
+      {{watermarkText}}
+    </view>
+    <image
+      src="{{bgUrl}}" mode="widthFix"
+      bindload="onLoad" wx:if="{{bgUrl}}" class="ac-watermark-img"/>
+  </view>
+  <canvas class="ac-watermark" canvas-id="ac-watermark-canvas" />
+</view>

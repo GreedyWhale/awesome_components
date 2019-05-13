@@ -1,0 +1,43 @@
+.ac-watermark-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .ac-watermark-img-wrapper {
+    position: relative;
+    .ac-watermark-img {
+      width: 100vw;
+    }
+    .ac-watermark-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 64rpx;
+    }
+  }
+  .ac-watermark {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-100%, -100%);
+  }
+  .ac-watermark-toolbar {
+    width: 100%;
+    padding: 10rpx;
+    box-sizing: border-box;
+    button {
+      font-size: 32rpx;
+      margin-bottom: 20rpx;
+    }
+    input {
+      font-size: 32rpx;
+      border: 1rpx solid #e5e5e5;
+      border-radius: 8rpx;
+      margin-bottom: 20rpx;
+      height: 80rpx;
+      padding-left: 20rpx;
+    }
+  }
+}
