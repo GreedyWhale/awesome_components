@@ -6,16 +6,16 @@
 {
   "navigationBarTitleText": "Tabs",
   "usingComponents": {
-    "ac-tabs": "@csr/awesome_components/tabs/tabs",
-    "ac-tabs-plane": "@csr/awesome_components/tabs-plane/tabs-plane",
+    "ac-tabs": "@csr/awesome_components/components/tabs/tabs",
+    "ac-tabs-panel": "@csr/awesome_components/components/tabs-panel/tabs-panel",
   }
 }
 
 <view>
   <ac-tabs default-active="{{1}}">
-    <ac-tabs-plane title="标题一">内容一</ac-tabs-plane>
-    <ac-tabs-plane title="标题二">内容二</ac-tabs-plane>
-    <ac-tabs-plane title="标题三">内容三</ac-tabs-plane>
+    <ac-tabs-panel title="标题一">内容一</ac-tabs-panel>
+    <ac-tabs-panel title="标题二">内容二</ac-tabs-panel>
+    <ac-tabs-panel title="标题三">内容三</ac-tabs-panel>
   </ac-tabs>
 </view>
 ```
@@ -24,9 +24,9 @@
 
 ```
 <ac-tabs default-active="{{1}}" animated>
-  <ac-tabs-plane title="标题一">内容一</ac-tabs-plane>
-  <ac-tabs-plane title="标题二">内容二</ac-tabs-plane>
-  <ac-tabs-plane title="标题三">内容三</ac-tabs-plane>
+  <ac-tabs-panel title="标题一">内容一</ac-tabs-panel>
+  <ac-tabs-panel title="标题二">内容二</ac-tabs-panel>
+  <ac-tabs-panel title="标题三">内容三</ac-tabs-panel>
 </ac-tabs>
 ```
 
@@ -34,9 +34,9 @@
 
 ```
 <ac-tabs default-active="{{1}}" animated swipeable>
-  <ac-tabs-plane title="标题一">内容一</ac-tabs-plane>
-  <ac-tabs-plane title="标题二">内容二</ac-tabs-plane>
-  <ac-tabs-plane title="标题三">内容三</ac-tabs-plane>
+  <ac-tabs-panel title="标题一">内容一</ac-tabs-panel>
+  <ac-tabs-panel title="标题二">内容二</ac-tabs-panel>
+  <ac-tabs-panel title="标题三">内容三</ac-tabs-panel>
 </ac-tabs>
 ```
 
@@ -44,25 +44,25 @@
 
 ```
 <ac-tabs default-active="{{1}}" animated swipeable>
-  <ac-tabs-plane title="标题一">内容一</ac-tabs-plane>
-  <ac-tabs-plane title="标题二">内容二</ac-tabs-plane>
-  <ac-tabs-plane title="标题三">内容三</ac-tabs-plane>
-  <ac-tabs-plane title="标题四">内容四</ac-tabs-plane>
-  <ac-tabs-plane title="标题五">内容五</ac-tabs-plane>
-  <ac-tabs-plane title="标题六">内容六</ac-tabs-plane>
-  <ac-tabs-plane title="标题七">内容七</ac-tabs-plane>
-  <ac-tabs-plane title="标题八">内容八</ac-tabs-plane>
-  <ac-tabs-plane title="标题九">内容九</ac-tabs-plane>
+  <ac-tabs-panel title="标题一">内容一</ac-tabs-panel>
+  <ac-tabs-panel title="标题二">内容二</ac-tabs-panel>
+  <ac-tabs-panel title="标题三">内容三</ac-tabs-panel>
+  <ac-tabs-panel title="标题四">内容四</ac-tabs-panel>
+  <ac-tabs-panel title="标题五">内容五</ac-tabs-panel>
+  <ac-tabs-panel title="标题六">内容六</ac-tabs-panel>
+  <ac-tabs-panel title="标题七">内容七</ac-tabs-panel>
+  <ac-tabs-panel title="标题八">内容八</ac-tabs-panel>
+  <ac-tabs-panel title="标题九">内容九</ac-tabs-panel>
 </ac-tabs>
 ```
 
 ### 禁用某一项
 
 ```
-<ac-tabs default-active="{{1}}" animated swipeable>
-  <ac-tabs-plane title="标题一">内容一</ac-tabs-plane>
-  <ac-tabs-plane title="标题二" disabled>内容二</ac-tabs-plane>
-  <ac-tabs-plane title="标题三">内容三</ac-tabs-plane>
+<ac-tabs default-active="{{0}}" animated swipeable>
+  <ac-tabs-panel title="标题一">内容一</ac-tabs-panel>
+  <ac-tabs-panel title="标题二" disabled>内容二</ac-tabs-panel>
+  <ac-tabs-panel title="标题三">内容三</ac-tabs-panel>
 </ac-tabs>
 ```
 ### API

@@ -31,7 +31,6 @@
 .ac-nav-scroll-right-item {
   background: #fff;
   padding: 20rpx;
-  height: calc(100vh - 20rpx);
   box-sizing: border-box;
   border-top: 20rpx solid #eeeded;
 }

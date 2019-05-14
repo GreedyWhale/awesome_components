@@ -7,7 +7,7 @@
 {
   "navigationBarTitleText": "vertical-navigation",
   "usingComponents": {
-    "ac-vertical-navigation": "@csr/awesome_components/vertical-navigation/vertical-navigation"
+    "ac-vertical-navigation": "@csr/awesome_components/components/vertical-navigation/vertical-navigation"
   }
 }
 
@@ -34,32 +34,30 @@
 // page.js
 Page({
   data: {
-    navIndex: 0
+    navIndex: 0,
     navs: ['nav-1','nav-2','nav-3','nav-4','nav-5','nav-6'],
     contents: ['content-1','content-2','content-3','content-4','content-5','content-6']
   },
-  methods: {
-    onTapNav({currentTarget: {dataset: {index}}}) {
-      this.setData({
-        navIndex: index
-      })
-    },
-    updateActiveNav(e) {
-      this.setData({
-        navIndex: e.detail
-      })
-    }
+  onTapNav({currentTarget: {dataset: {index}}}) {
+    this.setData({
+      navIndex: index
+    })
+  },
+  updateActiveNav(e) {
+    this.setData({
+      navIndex: e.detail
+    })
   }
 })
 
 // page.wxss
-@import '../../wxss/vertical-navigation/vertical-navigation.wxss';
+@import '../../miniprogram_npm/@csr/awesome_components/wxss/vertical-navigation/vertical-navigation.wxss';
 ```
 
 ### API
 | 属性 | 类型 | 说明 | 默认值 |
 | :---: | :----: | :----: | :----: |
-| scrollHeight | Number | 导航高度，单位rpx，不需要传单位 | 100vh
+| scrollHeight | String | 导航高度，需要传单位 | 100vh
 | nav-length | Number | 左边导航数组的长度 | 
 | content-item-id | String | 右边内容区包裹内容元素id，id的格式为xxx-当前展示面板的下标（index）,例如第一个导航对应的面板就是'xxx-0'，不用传递`#` | content-
 | nav-item-selector | String | 导航区导航元素的选择器，用于确定每个导航的高度，需要传递`.或者#` | `.ac-nav-item`

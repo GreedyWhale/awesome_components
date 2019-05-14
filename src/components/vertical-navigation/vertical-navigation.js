@@ -5,11 +5,10 @@ Component({
   properties: {
     scrollHeight: {
       type: Number,
+      optionalTypes: [String],
       value: 0,
       observer(newValue) {
-        if (newValue && typeof newValue === 'number') {
-          this.setData({scrollStyle: `height: ${newValue}rpx;`})
-        }
+        this.setData({scrollStyle: `height: ${newValue};`})
       }
     },
     navLength: {
@@ -28,7 +27,7 @@ Component({
       type: Number,
       value: 0,
       observer(newValue) {
-        if (newValue !== this.data.navIndex) {
+        if (newValue !== this.data.currentIndex) {
           this.updateContentScrollTop(newValue)
         }
       }
@@ -39,9 +38,10 @@ Component({
     navScrollTop: 0,
     contentScrollTop: 0,
     navItemHeight: 0,
-    navIndex: null,
     scrollLock: false,
-    scrollStyle: ''
+    scrollStyle: '',
+    currentIndex: null,
+    scrollTop: 0
   },
   lifetimes: {
     ready() {
@@ -58,10 +58,16 @@ Component({
         const id = `#${this.data.contentItemId}${value}`
         query
           .select(id)
-          .boundingClientRect(rect => {
-            this.topList[value] = {id, top: rect.top, bottom: rect.bottom}
-          })
-          .exec()
+          .boundingClientRect()
+          .exec(
+            rect => {
+              this.topList[value] = {
+                id,
+                top: value * rect[value].height,
+                bottom: rect[value].height * (value + 1)
+              }
+            }
+          )
       })
     },
     getNavItemHeight() {
@@ -77,23 +83,25 @@ Component({
         .exec()
     },
     onScroll({detail: {scrollTop}}) {
+      clearTimeout(this.scrollLockTimer)
       if (this.data.scrollLock) {
-        if (scrollTop === this.data.contentScrollTop) {
+        this.scrollLockTimer = setTimeout(() => {
           this.setData({
             scrollLock: false
           })
-        }
+        }, 200)
         return
       }
       if (this.topList.length) {
         scrollTop += 40
         // eslint-disable-next-line max-len
-        const currentIndex = this.topList.findIndex(item => scrollTop > item.top && scrollTop < item.bottom)
-        if (this.data.navIndex === currentIndex || currentIndex < 0) {
+        const currentIndex = this.topList.findIndex(item => scrollTop > item.top && scrollTop <= item.bottom)
+        if (currentIndex < 0 || currentIndex === this.data.currentIndex) {
           return
         }
         this.setData({
-          navIndex: currentIndex,
+          currentIndex,
+          scrollTop,
           navScrollTop: (currentIndex * this.data.navItemHeight) - this.data.navItemHeight
         })
         this.triggerEvent('updateNav', currentIndex)
@@ -106,6 +114,7 @@ Component({
         contentScrollTop: this.topList[index].top,
         navScrollTop: navScrollTop < 0 ? 0 : navScrollTop,
         scrollLock: true,
+        currentIndex: activeIndex
       })
     }
   }
