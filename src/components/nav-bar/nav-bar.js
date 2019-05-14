@@ -44,6 +44,10 @@ Component({
     imgMode: {
       type: String,
       value: 'widthFix'
+    },
+    enablePlaceholder: {
+      type: Boolean,
+      value: true
     }
   },
   lifetimes: {

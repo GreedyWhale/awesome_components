@@ -1,8 +1,8 @@
 {
   "name": "@csr/awesome_components",
-  "version": "0.0.2",
-  "description": "",
-  "main": "miniprogram_dist/index.js",
+  "version": "1.0.1",
+  "description": "一款包含了小程序开发中常用的组件以及动画效果的库",
+  "main": "miniprogram_dist/",
   "scripts": {
     "dev": "gulp dev --develop",
     "watch": "npm run clean-dev && gulp watch --develop --watch",

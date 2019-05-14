@@ -100,6 +100,7 @@
 | z-index | String \| Number | 导航栏的z-index | 3
 | bg-image | string | 导航栏背景图 | 
 | img-mode | string | 导航栏背景图，裁剪模式 | widthFix
+| enable-placeholder | Boolean | 是否开启占位元素，该元素的高度和navbar的高度相同 | true
 
 
 ### 事件
