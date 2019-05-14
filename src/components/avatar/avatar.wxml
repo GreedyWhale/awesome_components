@@ -30,7 +30,7 @@
     <view class="avatar-dot flex-align-center" wx:elif="{{visibleDot}}">
       <slot name="tag"></slot>
     </view>
-    <view class="ellipsis">
+    <view class="ellipsis custom-class-text">
       <slot></slot>
     </view>
   </view>
