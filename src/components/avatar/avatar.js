@@ -40,9 +40,6 @@ Component({
       value: ''
     }
   },
-
-  data: {},
-
   methods: {
     onClick(e) {
       this.triggerEvent('onclick', e)

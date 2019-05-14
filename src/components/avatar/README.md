@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "Avatar",
   "usingComponents": {
-    "ac-avatar": "@csr/awesome_components/avatar/avatar"
+    "ac-avatar": "@csr/awesome_components/components/avatar/avatar"
   }
 }
 
@@ -40,8 +40,8 @@
 
 ### 自定义右上角标签
 ```
-<ac-avatar url="xxx.png" visibleDot="{{true}}">
-  <iamge src="xxx.png" style="width: 20rpx; height: 20rpx; border-radius: 50%"></view>
+<ac-avatar url="xxx.png" visible-dot="{{true}}">
+  <image slot="tag" src="xxx.png" style="width: 20rpx; height: 20rpx; border-radius: 50%;" />
 </ac-avatar>
 ```
 
@@ -91,3 +91,9 @@ Page({
 | 名称 | 说明 |
 | :---: | :----: |
 | tag | 用于自定义右上角标签 | 
+
+### 外部样式类
+
+| 名称 | 说明 |
+| :---: | :----: |
+| custom-class-text | 文字类头像中文字的样式类 | 

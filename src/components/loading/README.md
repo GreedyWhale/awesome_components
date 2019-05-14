@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "Loading",
   "usingComponents": {
-    "ac-loading": "@csr/awesome_components/loading/loading"
+    "ac-loading": "@csr/awesome_components/components/loading/loading"
   }
 }
 
