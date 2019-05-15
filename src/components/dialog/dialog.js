@@ -37,9 +37,9 @@ Component({
       type: Boolean,
       value: true
     },
-    custom: {
+    visibleFooter: {
       type: Boolean,
-      value: false
+      value: true
     },
     zIndex: {
       type: String,

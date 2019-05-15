@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "Watermark",
   "usingComponents": {
-    "ac-watermark": "@csr/awesome_components/watermark/watermark"
+    "ac-watermark": "@csr/awesome_components/components/watermark/watermark"
   }
 }
 

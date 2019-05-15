@@ -47,8 +47,8 @@
 ### 自定义弹窗
 ```
 <view>
-  <ac-dialog visible="{{true}}" custom">
-    自定义内容
+  <ac-dialog visible="{{true}}" visible-footer="{{false}}">
+    <view> 自定义内容 </view>
   </ac-dialog>
 </view>
 ```
@@ -63,7 +63,7 @@
 | cancel-desc | String | 取消按钮文案 | 取消
 | visible-cancel-btn | Boolean | 是否展示取消按钮 | true
 | visible-close-icon | Boolean | 是否展示关闭图标 | true
-| custom | Boolean | 是否开启自定义弹窗 | false
+| visible-footer | Boolean | 是否显示按钮 | true
 | z-index | string | 弹窗z-index值 | 1
 
 
@@ -78,5 +78,5 @@
 
 | 名称 | 说明 |
 | :---: | :----: |
-|  | 自定义弹窗内容，需要将custom设置为true |
+|  | 自定义弹窗内容 |
 

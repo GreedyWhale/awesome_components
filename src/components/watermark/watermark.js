@@ -85,9 +85,11 @@ Component({
       })
     },
     setwatermarkFontSize(e) {
-      this.setData({
-        fontSize: e.detail.value
-      })
+      if (e.detail.value) {
+        this.setData({
+          fontSize: e.detail.value
+        })
+      }
     },
     chooseImg() {
       wx.chooseImage({

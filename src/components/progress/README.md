@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "Progress",
   "usingComponents": {
-    "ac-progress": "@csr/awesome_components/progress/progress"
+    "ac-progress": "@csr/awesome_components/components/progress/progress"
   }
 }
 
@@ -23,7 +23,7 @@
 
 ### 自定义进度条宽高背景色
 ```
-<ac-progress percent="20" customStyle="{{ {width: 150rpx, height: 20rpx, background: blue} }}">20%</ac-progress>
+<ac-progress percent="20" custom-style="{{ {width: '150rpx', height: '20rpx', background: 'blue'} }}">20%</ac-progress>
 ```
 
 ### 自定义进度颜色

@@ -5,7 +5,7 @@
 
 wxss 文件
 ```
-@import '../../wxss/timeline/timeline.wxss';
+@import '../../miniprogram_npm/@csr/awesome_components/wxss/timeline/timeline.wxss';
 ```
 wxml 文件
 ```
