@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "Dialog",
   "usingComponents": {
-    "ac-dialog": "@csr/awesome_components/dialog/dialog"
+    "ac-dialog": "@csr/awesome_components/components/dialog/dialog"
   }
 }
 
@@ -33,14 +33,14 @@
 ### 隐藏取消按钮
 ```
 <view>
-  <ac-dialog visible="{{true}}" title="标题" content="内容" visible-cancel-btn="{{ture}}"></ac-dialog>
+  <ac-dialog visible="{{true}}" title="标题" content="内容" visible-cancel-btn="{{false}}"></ac-dialog>
 </view>
 ```
 
 ### 隐藏关闭图标
 ```
 <view>
-  <ac-dialog visible="{{true}}" title="标题" content="内容" visible-close-icon="{{ture}}"></ac-dialog>
+  <ac-dialog visible="{{true}}" title="标题" content="内容" visible-close-icon="{{false}}"></ac-dialog>
 </view>
 ```
 

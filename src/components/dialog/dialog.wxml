@@ -17,9 +17,11 @@
       <slot></slot>
       <view class="ac-dialog-footer" wx:if="{{visibleFooter}}">
         <button
+          hover-class="ac-dialog-button-hover"
           class="ac-dialog-button ac-dialog-button-cancel"
           wx:if="{{visibleCancelBtn}}" bindtap="onCancel">{{cancelDesc}}</button>
         <button
+          hover-class="ac-dialog-button-hover"
           class="ac-dialog-button ac-dialog-button-confirm"
           bindtap="onConfirm">{{confirmDesc}}</button>
       </view>
