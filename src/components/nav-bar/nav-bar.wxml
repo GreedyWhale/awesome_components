@@ -1,7 +1,10 @@
-<view class="ac-custom-placeholder" style="{{navBarStyles}}" wx:if="{{enablePlaceholder}}"></view>
+<view
+  class="ac-custom-placeholder"
+  style="{{navBarStyles}}"
+  wx:if="{{enablePlaceholder}}"></view>
 <view
   class="ac-custom-nav-bar"
-  style="{{navBarStyles}}">
+  style="{{navBarStyles}} background-color: {{backgroundColor}}; z-index: {{zIndex}};">
   <view class="ac-content" style="{{titleStyles}}">
     <view class="ac-content-left" style="{{leftCornerStyles}}">
       <view

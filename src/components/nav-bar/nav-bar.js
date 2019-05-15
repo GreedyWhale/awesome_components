@@ -74,12 +74,11 @@ Component({
       const {windowWidth} = wx.getSystemInfoSync()
       const totalHeight = bottom + this.data.pillPaddingBottom
       const left = windowWidth - right
-      const {backgroundColor, zIndex} = this.data
       this.setData({
         pillRight: left,
         pillwidth: width,
         height: totalHeight,
-        navBarStyles: `height: ${totalHeight}px; padding-top: ${top}px;background-color: ${backgroundColor}; z-index: ${zIndex}`,
+        navBarStyles: `height: ${totalHeight}px; padding-top: ${top}px;`,
         titleStyles: `height: ${height}px;`,
         leftCornerStyles: `height: ${height}px; padding-left: ${left}px`
       })
