@@ -2,6 +2,7 @@ Component({
   options: {
     multipleSlots: true
   },
+  externalClasses: ['custom-class-root'],
   properties: {
     text: {
       type: String,

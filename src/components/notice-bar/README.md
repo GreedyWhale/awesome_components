@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "NoticeBar",
   "usingComponents": {
-    "ac-notice-bar": "@csr/awesome_components/notice-bar/notice-bar"
+    "ac-notice-bar": "@csr/awesome_components/components/notice-bar/notice-bar"
   }
 }
 
@@ -44,7 +44,7 @@
 | icon-color | String | 图标颜色  | 默认和字体颜色相同
 | close | Boolean | 是否显示关闭按钮 | true
 | autoplay | Boolean | 是否滚动 | true
-| speed | String\| Number | 滚动速度，单位s。单位不用传  | 10s
+| speed | String\| Number | 滚动速度，单位s。单位不用传  | 10
 
 ### 事件
 | 事件名  | 说明 | 参数 |

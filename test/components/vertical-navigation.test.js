@@ -39,13 +39,13 @@ describe('vertical-navigation', () => {
     const {onScroll} = component.instance
     onScroll.call(component, {detail: {scrollTop: 21}})
     simulate.sleep(10)
-    expect(component.data.navIndex).toEqual(1)
+    expect(component.data.currentIndex).toEqual(1)
     expect(fakeTriggerEvent).toBeCalled()
     component.detach()
   })
   it('vertical-navigation 组件的内容区域scrollTop会随着activeIndex改变而改变', async () => {
     const component = simulate.render(verticalNavigation, {
-      navLength: 10,
+      navLength: 3,
       contentItemId: 'content-'
     })
     const fakeCollectContentTop = jest.fn()

@@ -14,7 +14,7 @@
 {
   "navigationBarTitleText": "NavBar",
   "usingComponents": {
-    "ac-nav-bar": "@csr/awesome_components/nav-bar/nav-bar"
+    "ac-nav-bar": "@csr/awesome_components/components/nav-bar/nav-bar"
   }
 }
 

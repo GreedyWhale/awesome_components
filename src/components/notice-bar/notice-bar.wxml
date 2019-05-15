@@ -20,7 +20,7 @@
   }
   module.exports = {setNoticeBarStyles: setNoticeBarStyles}
 </wxs>
-<view class="ac-notice-bar" bindtap="onTap"
+<view class="ac-notice-bar custom-class-root" bindtap="onTap"
   style="{{wxs.setNoticeBarStyles(top, visibleIcon, close, color, bgColor)}}">
   <view class="ac-notice-bar-prefix" wx:if="{{visibleIcon}}">
     <view class="ac-iconfont icon-notice" style="color: {{iconColor || color}}"></view>
