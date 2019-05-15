@@ -9,8 +9,8 @@
           <view class="ac-iconfont icon-close"></view>
         </view>
       </view>
-      <view class="ac-dialog-body">
-        <view class="ac-dialog-content" wx:if="{{content}}">
+      <view class="ac-dialog-body" wx:if="{{content}}">
+        <view class="ac-dialog-content">
           {{content}}
         </view>
       </view>
