@@ -1,3 +1,5 @@
+const AC_MENU_BUTTON_INFO = 'AC_MENU_BUTTON_INFO'
+
 Component({
   options: {
     multipleSlots: true
@@ -67,10 +69,26 @@ Component({
   },
   methods: {
     initStyle() {
-      const {
+      let {
         bottom, right,
         height, top, width
       } = wx.getMenuButtonBoundingClientRect()
+      if (bottom) {
+        wx.setStorageSync(AC_MENU_BUTTON_INFO, {
+          bottom,
+          right,
+          height,
+          top,
+          width
+        })
+      } else {
+        const menuButtonInfo = wx.getStorageSync(AC_MENU_BUTTON_INFO)
+        bottom = menuButtonInfo.bottom
+        right = menuButtonInfo.right
+        height = menuButtonInfo.height
+        top = menuButtonInfo.top
+        width = menuButtonInfo.width
+      }
       const {windowWidth} = wx.getSystemInfoSync()
       const totalHeight = bottom + this.data.pillPaddingBottom
       const left = windowWidth - right
