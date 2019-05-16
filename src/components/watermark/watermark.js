@@ -22,14 +22,14 @@ Component({
     textLeft: 0,
     imageTop: 0,
     fontSize: 32,
-    disabled: false
+    disabled: false,
+    canMove: false
   },
   lifetimes: {
     ready() {
       this.getElemStyle('.ac-watermark-img-wrapper', (rect) => {
         this.setData({
-          imageTop: rect.top,
-          imageBottom: rect.bottom
+          imageTop: rect.top
         })
       })
     }
@@ -65,7 +65,8 @@ Component({
       const canvasHeight = canvasWidth * (imgHeight / imgWidth)
       this.setData({
         canvasWidth,
-        canvasHeight
+        canvasHeight,
+        canMove: true
       })
     },
     onInput(e) {
@@ -75,11 +76,15 @@ Component({
     },
     onTouchMove(e) {
       const {
-        imageTop, imageBottom, fontSize, watermarkText
+        imageTop, canvasHeight, fontSize, watermarkText,
+        canMove
       } = this.data
+      if (!canMove) {
+        return
+      }
       const delta = (fontSize * watermarkText.length) / 2
       const {pageY, pageX} = e.changedTouches[0]
-      if ((pageY <= imageTop) || (pageY >= imageBottom)) {
+      if ((pageY <= imageTop) || (pageY >= (imageTop + canvasHeight))) {
         return
       }
       this.setData({
