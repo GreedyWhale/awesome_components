@@ -2,6 +2,7 @@ Component({
   options: {
     multipleSlots: true
   },
+  externalClasses: ['custom-class-icon'],
   properties: {
     defaultActive: {
       type: Boolean,

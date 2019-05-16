@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "GiveLike",
   "usingComponents": {
-    "ac-give-like": "@csr/awesome_components/give-like/give-like"
+    "ac-give-like": "@csr/awesome_components/components/give-like/give-like"
   }
 }
 

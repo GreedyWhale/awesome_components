@@ -15,8 +15,8 @@
 
 <view class="give-like-wrapper">
   <view class="give-like" bindtap="onClick">
-    <view class="ac-iconfont icon-like" style="{{iconFontSize}}"></view>
-    <view class="{{wxs.setIconClasses(isActive, startAnimation)}}" style="{{iconFontSize}}"></view>
+    <view class="ac-iconfont icon-like custom-class-icon" style="{{iconFontSize}}"></view>
+    <view class="{{wxs.setIconClasses(isActive, startAnimation)}} custom-class-icon" style="{{iconFontSize}}"></view>
     <view class="give-like-text {{startAnimation ? 'play-animation': ''}}">{{tips}}</view>
   </view>
 </view>

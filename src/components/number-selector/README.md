@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "NumberSelector",
   "usingComponents": {
-    "ac-number-selector": "@csr/awesome_components/number-selector/number-selector"
+    "ac-number-selector": "@csr/awesome_components/components/number-selector/number-selector"
   }
 }
 
@@ -26,10 +26,6 @@
 <ac-number-selector max-num="{{10}}" min-num="{{1}}"></ac-number-selector>
 ```
 
-### 设置最大值 & 最小值
-```
-<ac-number-selector max-num="{{10}}" min-num="{{1}}"></ac-number-selector>
-```
 
 ### 递增量 & 递减量
 ```

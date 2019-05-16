@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "sticky",
   "usingComponents": {
-    "ac-sticky": "@csr/awesome_components/sticky/sticky"
+    "ac-sticky": "@csr/awesome_components/components/sticky/sticky"
   }
 }
 

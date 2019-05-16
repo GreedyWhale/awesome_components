@@ -6,12 +6,12 @@
 {
   "navigationBarTitleText": "SlideView",
   "usingComponents": {
-    "ac-slide-view": "@csr/awesome_components/slide-view/slide-view"
+    "ac-slide-view": "@csr/awesome_components/components/slide-view/slide-view"
   }
 }
 
 <view>
-  <ac-slide-view height="100">
+  <ac-slide-view>
     <view slot="left">默认展示内容</view>
     <view slot="right">滑动展示内容</view>
   </ac-slide-view>

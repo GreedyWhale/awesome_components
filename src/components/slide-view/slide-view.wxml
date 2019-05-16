@@ -24,10 +24,10 @@
     inertia
     x="{{offsetX}}"
     style="{{wxs.setmovableViewStyle(height, sildeWrapperWidth, sildeRightWidth)}}">
-    <view style="width: {{sildeWrapperWidth}}px;" class="slide-left">
+    <view style="width: {{sildeWrapperWidth}}px; {{wxs.setmovableViewStyle(height)}}" class="slide-left">
       <slot name="left"></slot>
     </view>
-    <view class="slide-right">
+    <view class="slide-right" style="{{wxs.setmovableViewStyle(height)}}">
       <slot name="right"></slot>
     </view>
   </movable-view>

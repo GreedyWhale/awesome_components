@@ -6,7 +6,7 @@
 {
   "navigationBarTitleText": "Steps",
   "usingComponents": {
-    "ac-steps": "@csr/awesome_components/steps/steps"
+    "ac-steps": "@csr/awesome_components/components/steps/steps"
   }
 }
 
@@ -73,7 +73,7 @@ Page({
   font-family: "current-iconfont" !important;
 }
 .icon::before {
-  content: '\e7d6'
+  content: '\e7d6' !important;
 }
 ```
 
