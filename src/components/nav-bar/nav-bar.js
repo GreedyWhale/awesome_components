@@ -73,6 +73,7 @@ Component({
         bottom, right,
         height, top, width
       } = wx.getMenuButtonBoundingClientRect()
+      // getMenuButtonBoundingClientRect 有bug 详情查看 https://developers.weixin.qq.com/community/develop/doc/000aa2ed070a681ca1583206a50800
       if (bottom) {
         wx.setStorageSync(AC_MENU_BUTTON_INFO, {
           bottom,

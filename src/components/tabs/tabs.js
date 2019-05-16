@@ -153,9 +153,10 @@ Component({
       const {clientX} = e.changedTouches[0]
       // eslint-disable-next-line prefer-const
       let {activeIndex, disabled, titles} = this.data
+      const max = titles.length - 1
       // 左滑
       if (clientX - this.data.startX < -10) {
-        activeIndex = activeIndex + 1 <= titles.length ? activeIndex + 1 : titles.length
+        activeIndex = activeIndex + 1 <= max ? activeIndex + 1 : max
         if (disabled[activeIndex]) {
           const newDisabled = disabled.slice(activeIndex)
           activeIndex += newDisabled.findIndex(value => !value)
@@ -164,7 +165,7 @@ Component({
       }
       // 右滑
       if (clientX - this.data.startX > 10) {
-        activeIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : 0
+        activeIndex = activeIndex - 1 > 0 ? activeIndex - 1 : 0
         if (disabled[activeIndex]) {
           const newDisabled = disabled.slice(0, activeIndex + 1)
           activeIndex = newDisabled.lastIndexOf(false)
