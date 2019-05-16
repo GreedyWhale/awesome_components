@@ -28,7 +28,8 @@ Component({
     ready() {
       this.getElemStyle('.ac-watermark-img-wrapper', (rect) => {
         this.setData({
-          imageTop: rect.top
+          imageTop: rect.top,
+          imageBottom: rect.bottom
         })
       })
     }
@@ -73,10 +74,17 @@ Component({
       })
     },
     onTouchMove(e) {
-      const delta = (this.data.fontSize * this.data.watermarkText.length) / 2
+      const {
+        imageTop, imageBottom, fontSize, watermarkText
+      } = this.data
+      const delta = (fontSize * watermarkText.length) / 2
+      const {pageY, pageX} = e.changedTouches[0]
+      if ((pageY <= imageTop) || (pageY >= imageBottom)) {
+        return
+      }
       this.setData({
-        textTop: e.changedTouches[0].pageY - this.data.imageTop - (this.data.fontSize / 2),
-        textLeft: e.changedTouches[0].pageX - delta,
+        textTop: pageY - imageTop - (fontSize / 2),
+        textLeft: pageX - delta,
       })
     },
     setwatermarkColor(e) {
@@ -87,7 +95,7 @@ Component({
     setwatermarkFontSize(e) {
       if (e.detail.value) {
         this.setData({
-          fontSize: e.detail.value
+          fontSize: parseFloat(e.detail.value, 10)
         })
       }
     },
