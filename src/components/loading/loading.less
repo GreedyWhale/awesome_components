@@ -26,16 +26,16 @@
     height: 100%;
     background-color: black;
     &:nth-child(1) {
-      animation: grow 1s -0.45s ease-in-out infinite;
+      animation: grow 1s 0.5s ease-in-out infinite;
     }
     &:nth-child(2) {
-      animation: grow 1s -0.3s ease-in-out infinite;
+      animation: grow 1s 0.75s ease-in-out infinite;
     }
     &:nth-child(3) {
-      animation: grow 1s -0.15s ease-in-out infinite;
+      animation: grow 1s 1s ease-in-out infinite;
     }
     &:nth-child(4) {
-      animation: grow 1s ease-in-out infinite;
+      animation: grow 1s 1.25s ease-in-out infinite;
     }
   }
 }
@@ -172,29 +172,16 @@
     border-radius: 50%;
     background-color: black;
     animation: dots-fade 0.8s ease-in-out alternate infinite;
-    &:first-child {
-      animation-delay: -0.4s;
+    &:nth-child(1) {
+      animation-delay: 0.5s;
     }
     &:nth-child(2) {
-      animation-delay: -0.2s;
+      animation-delay: 0.7s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.9s;
     }
   }
-}
-//square
-@keyframes square-flip {
-  50% {
-    transform: rotateY(180deg);
-  }
-  100% {
-    transform: rotateY(180deg) rotateX(180deg);
-  }
-}
-.ac-loading-square {
-  width: 64rpx;
-  height: 64rpx;
-  background-color: black;
-  transform: rotate(0);
-  animation: square-flip 1s infinite;
 }
 // sudoku
 @keyframes sudoku-fade {
@@ -261,13 +248,16 @@
     border-style: solid;
     border-color: black transparent transparent transparent;
     &:nth-child(1) {
-      animation-delay: -0.45s;
+      animation-delay: 0.6s;
     }
     &:nth-child(2) {
-      animation-delay: -0.3s;
+      animation-delay: 0.7s;
     }
     &:nth-child(3) {
-      animation-delay: -0.15s;
+      animation-delay: 0.8s;
+    }
+    &:nth-child(9) {
+      animation-delay: 0.9s;
     }
   }
 }
@@ -331,10 +321,13 @@
     transform: translateY(-100%);
     animation: wave 0.8s ease-in-out alternate infinite;
     &:nth-child(1) {
-      animation-delay: -0.4s;
+      animation-delay: 0.5s;
     }
     &:nth-child(2) {
-      animation-delay: -0.2s;
+      animation-delay: 0.7s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.9s;
     }
   }
 }
