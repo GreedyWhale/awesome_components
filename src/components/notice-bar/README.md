@@ -51,3 +51,9 @@
 | :---: | :----: | :----: |
 | onclick | 点击NoticeBar时触发 | event: Event
 | onclose | 点击关闭按钮时触发 | event: Event
+
+### 外部样式类
+
+| 名称 | 说明 |
+| :---: | :----: |
+| custom-class-root | 组件根元素的样式类 |

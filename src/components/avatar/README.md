@@ -78,7 +78,7 @@ Page({
 | shape | String | 头像形状，可选值：square（直角矩形），rounded（圆角矩形），circle（圆形） | square
 | count | String \| Number | 消息数量 | 
 | visible-dot | Boolean | 自定义右上角标签时，需要传入true | false
-| bg-color | String | 自定义文字头像时的颜色，格式为十六进制 | 
+| bg-color | String | 头像背景色 | 
 
 ### 事件
 | 事件名  | 说明 | 参数 |

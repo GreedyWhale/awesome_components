@@ -76,7 +76,7 @@
 #### tabs-panel
 | 属性 | 类型 | 说明 | 默认值 |
 | :---: | :----: | :----: | :----: |
-| title | string |tab标题 | 0
+| title | string |tab标题 |
 | disabled | Boolean | 是否禁用 | false
 
 ### 事件

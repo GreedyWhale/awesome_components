@@ -16,22 +16,12 @@ Component({
     tips: {
       type: String,
       value: '+1'
-    },
-    fontSize: {
-      type: String,
-      value: '',
-      observer(newValue) {
-        this.setData({
-          iconFontSize: `font-size: ${newValue}rpx`
-        })
-      }
     }
   },
 
   data: {
     isActive: false,
-    startAnimation: false,
-    iconFontSize: ''
+    startAnimation: false
   },
 
   methods: {

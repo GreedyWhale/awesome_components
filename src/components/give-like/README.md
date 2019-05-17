@@ -31,7 +31,6 @@
 | :---: | :----: | :----: | :----: |
 | default-active | Boolean | 是否默认激活 |
 | tips | String | 点击时的提示 | +1
-| font-size | String \| Number | 按钮尺寸，因为使用的是字体图标，所以尺寸由元素的font-size决定，不用传单位 | 32rpx 
 
 ### 事件
 | 事件名  | 说明 | 参数 |
